@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TI 2026 — Forecast Desk</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap');
+:root{
+  --bg:#0B0E14; --bg-panel:#12161F; --bg-panel-2:#171C27; --line:#242B38; --line-soft:#1A2029;
+  --text:#E7EAF0; --text-dim:#8B93A5; --text-faint:#565E70;
+  --radiant:#3ECF8E; --radiant-dim:#245C42; --dire:#E8544E; --dire-dim:#5C2A27; --amber:#F2A93B; --amber-dim:#4A3A1C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
+html[lang="fa"] body{font-family:'Vazirmatn','Inter',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 15% 8%,rgba(62,207,142,.05),transparent 40%),radial-gradient(circle at 85% 92%,rgba(232,84,78,.05),transparent 40%);pointer-events:none;z-index:0;}
+
+/* layout */
+.app{display:flex;min-height:100vh;position:relative;z-index:1;}
+.sidebar{width:230px;background:var(--bg-panel);border-inline-end:1px solid var(--line);padding:26px 16px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0;}
+.brand{font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px;color:var(--text);}
+.brand span{color:var(--amber);}
+.brand-sub{font-size:11px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;margin-bottom:22px;}
+.nav{display:flex;flex-direction:column;gap:4px;}
+.nav a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:6px;color:var(--text-dim);text-decoration:none;font-size:13.5px;font-weight:500;transition:background .12s,color .12s;}
+.nav a:hover{background:var(--bg-panel-2);color:var(--text);}
+.nav a.active{background:var(--bg-panel-2);color:var(--text);box-shadow:inset 3px 0 0 var(--amber);}
+.nav .group{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);padding:14px 12px 5px;}
+.lang-toggle{margin-top:22px;display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+.lang-toggle button{flex:1;background:var(--bg-panel-2);border:none;color:var(--text-dim);padding:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;}
+.lang-toggle button.on{background:var(--amber);color:#111;}
+.foot-note{position:absolute;bottom:18px;inset-inline:16px;font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+
+.main{flex:1;min-width:0;padding:34px 34px 90px;max-width:1180px;margin:0 auto;width:100%;}
+
+/* hero */
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);}
+h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(32px,4.6vw,52px);letter-spacing:-.01em;line-height:1;text-transform:uppercase;margin-bottom:10px;}
+h1 .sub{display:block;font-weight:500;font-size:.34em;letter-spacing:.03em;color:var(--text-dim);text-transform:none;margin-top:10px;font-family:'Inter',sans-serif;}
+html[lang="fa"] h1{font-family:'Vazirmatn',sans-serif;text-transform:none;}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+.hero-meta .m-label{color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-size:9.5px;margin-bottom:3px;}
+.hero-meta .m-val.warn{color:var(--amber);}
+.banner{margin-top:26px;background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;padding:14px 18px;font-size:13px;color:var(--text-dim);display:flex;align-items:center;gap:10px;}
+.banner .pulse{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);animation:pulse 2s infinite;}
+@keyframes pulse{50%{opacity:.35;}}
+
+.section{padding:38px 0 0;}
+.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+.stage-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--bg);background:var(--text-dim);padding:3px 8px;border-radius:3px;text-transform:uppercase;white-space:nowrap;}
+.section h2{font-family:'Oswald',sans-serif;font-size:21px;font-weight:600;text-transform:uppercase;letter-spacing:.01em;}
+.section .section-note{margin-inline-start:auto;font-size:12px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;text-align:end;}
+
+/* model cards (overview) */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:6px;}
+.card{background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--text);transition:border-color .15s;}
+.card:hover{border-color:#2E3646;}
+.card .c-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;text-transform:uppercase;}
+.card .c-meta{font-size:12px;color:var(--text-dim);display:flex;flex-direction:column;gap:5px;}
+.card .c-meta b{color:var(--text);font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+.card .c-champ{margin-top:auto;font-size:12px;color:var(--amber);}
+.card .c-go{font-size:12px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+
+/* method band */
+.method-band{background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin-top:24px;font-size:13.5px;color:var(--text-dim);}
+.method-band strong{color:var(--text);}
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);}
+.method-item .mi-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-faint);margin-bottom:3px;}
+.method-item .mi-val{font-size:12.5px;color:var(--text-dim);}
+
+/* match card */
+.match-card{background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin-bottom:10px;}
+.match-card.thin-data{border-color:var(--amber-dim);background:linear-gradient(180deg,rgba(242,169,59,.04),var(--bg-panel) 40px);}
+.match-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.match-id{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-faint);min-width:58px;}
+.match-format{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);background:var(--bg-panel-2);border:1px solid var(--line);padding:2px 7px;border-radius:4px;}
+.thin-badge{margin-inline-start:auto;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber-dim);background:rgba(242,169,59,.08);padding:2px 8px;border-radius:4px;}
+.duel{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;}
+.side{display:flex;flex-direction:column;gap:5px;}
+.side.b{align-items:flex-end;text-align:end;}
+.team-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:16px;letter-spacing:.01em;}
+.side.a .team-name{color:var(--radiant);} .side.b .team-name{color:var(--dire);}
+.pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:21px;}
+.side.a .pct{color:var(--radiant);} .side.b .pct{color:var(--dire);}
+.vs-col{display:flex;flex-direction:column;align-items:center;gap:3px;font-family:'JetBrains Mono',monospace;color:var(--text-faint);font-size:10.5px;min-width:44px;}
+.tug{grid-column:1/-1;height:7px;border-radius:4px;overflow:hidden;display:flex;background:var(--line-soft);margin-top:4px;}
+.tug-a{background:linear-gradient(90deg,var(--radiant-dim),var(--radiant));}
+.tug-b{background:linear-gradient(90deg,var(--dire),var(--dire-dim));}
+.match-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line-soft);font-size:11.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;gap:10px;flex-wrap:wrap;}
+.factor-chips{display:flex;gap:5px;flex-wrap:wrap;}
+.chip{padding:2px 7px;border-radius:3px;background:var(--bg-panel-2);border:1px solid var(--line);font-size:10px;}
+.chip.pos{color:var(--radiant);} .chip.neg{color:var(--dire);} .chip.neu{color:var(--text-faint);}
+
+/* champion */
+.champ-panel{background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;padding:8px;}
+.champ-row{display:grid;grid-template-columns:34px 190px 1fr 84px;align-items:center;gap:14px;padding:11px 16px;border-radius:6px;}
+.champ-row:not(:last-child){border-bottom:1px solid var(--line-soft);}
+.champ-rank{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-faint);}
+.champ-team{font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;}
+.champ-bar-track{height:18px;background:var(--bg-panel-2);border-radius:4px;overflow:hidden;}
+.champ-bar-fill{height:100%;background:linear-gradient(90deg,#1F6E4A,var(--radiant));border-radius:4px;}
+.champ-row.tier1 .champ-bar-fill{background:linear-gradient(90deg,#B8781F,var(--amber));}
+.champ-row.tier3 .champ-bar-fill{background:linear-gradient(90deg,#3A4152,#565E70);}
+.champ-pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;text-align:end;}
+.champ-row.tier3 .champ-pct{color:var(--text-faint);font-weight:500;}
+
+/* fantasy */
+.roster-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+@media(max-width:900px){.roster-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.roster-grid{grid-template-columns:1fr;}}
+.player-card{background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;padding:16px 14px;position:relative;overflow:hidden;}
+.player-card::before{content:attr(data-pos);position:absolute;top:-6px;inset-inline-end:2px;font-family:'Oswald',sans-serif;font-weight:700;font-size:58px;color:var(--line-soft);line-height:1;z-index:0;}
+.player-card>*{position:relative;z-index:1;}
+.pc-pos{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.pc-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;margin-bottom:2px;}
+.pc-team{font-size:12px;color:var(--text-dim);margin-bottom:12px;}
+.pc-stat-row{display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-faint);margin-bottom:6px;}
+.pc-stat-row b{font-family:'JetBrains Mono',monospace;color:var(--text);font-size:12px;}
+.pc-ep{margin-top:10px;padding-top:10px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:baseline;}
+.pc-ep-label{font-size:11px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+.pc-ep-val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;color:var(--radiant);}
+.roster-total{margin-top:14px;display:flex;justify-content:space-between;align-items:center;background:var(--bg-panel-2);border:1px solid var(--line);border-radius:8px;padding:14px 20px;}
+.roster-total .rt-label{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;}
+.roster-total .rt-val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:24px;color:var(--radiant);}
+.empty-fantasy{padding:16px;color:var(--text-faint);font-size:13px;background:var(--bg-panel);border:1px dashed var(--line);border-radius:8px;}
+
+/* warnings */
+.caveats{background:var(--bg-panel);border:1px solid var(--amber-dim);border-radius:8px;padding:20px 24px;}
+.caveats h3{font-family:'Oswald',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--amber);margin-bottom:12px;}
+.caveats ol{padding-inline-start:20px;display:flex;flex-direction:column;gap:8px;}
+.caveats li{font-size:12.5px;color:var(--text-dim);}
+
+/* comparison */
+.cmp-select{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.cmp-select select,.cmp-select button{background:var(--bg-panel-2);border:1px solid var(--line);color:var(--text);border-radius:6px;padding:9px 12px;font-size:13px;font-family:inherit;}
+.cmp-row{display:grid;grid-template-columns:150px repeat(5,1fr) 90px;gap:8px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line-soft);font-size:12.5px;}
+.cmp-row.head{color:var(--text-faint);font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;}
+.cmp-row .c-team{color:var(--text-dim);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.cmp-bar{height:14px;border-radius:3px;background:var(--bg-panel-2);position:relative;overflow:hidden;}
+.cmp-bar .fill{position:absolute;inset-inline-start:0;top:0;bottom:0;background:var(--radiant);}
+.cmp-bar .fill.b{background:var(--dire);inset-inline-start:auto;inset-inline-end:0;}
+.cmp-num{font-family:'JetBrains Mono',monospace;text-align:center;font-size:12px;}
+.cmp-cons{font-family:'JetBrains Mono',monospace;text-align:center;font-weight:700;color:var(--amber);}
+.cmp-consensus-bar{height:7px;border-radius:4px;background:var(--line-soft);overflow:hidden;display:flex;margin-top:2px;}
+.agree-badge{font-size:11px;color:var(--radiant);}
+.disagree-badge{font-size:11px;color:var(--amber);}
+
+/* ===== comparison: clickable match cards ===== */
+.cmp-match{background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .15s ease;cursor:pointer;}
+.cmp-match:hover{border-color:#2E3646;}
+.cmp-match.open{border-color:var(--amber-dim);}
+.cmp-match-head{display:grid;grid-template-columns:74px 40px 1fr auto 24px;align-items:center;gap:12px;padding:14px 18px;}
+.cm-id{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);}
+.cm-format{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-dim);background:var(--bg-panel-2);border:1px solid var(--line);padding:2px 6px;border-radius:4px;text-align:center;}
+.cm-duel{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;}
+.cm-side{display:flex;align-items:center;gap:10px;min-width:0;}
+.cm-side.b{flex-direction:row-reverse;}
+.cm-team{font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cm-side.a .cm-team{color:var(--radiant);}
+.cm-side.b .cm-team{color:var(--dire);}
+.cm-pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;}
+.cm-side.a .cm-pct{color:var(--radiant);}
+.cm-side.b .cm-pct{color:var(--dire);}
+.cm-vs{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-faint);flex-shrink:0;}
+.cm-consensus{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;}
+.cm-consensus .lbl{font-size:9.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-family:'JetBrains Mono',monospace;}
+.cm-consensus .val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;color:var(--amber);}
+.cm-result{font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace;text-align:end;white-space:nowrap;}
+.cm-result.win-a{color:var(--radiant);}
+.cm-result.win-b{color:var(--dire);}
+.cm-result.live{color:var(--amber);}
+.cm-result.pending{color:var(--text-faint);font-weight:500;}
+.cm-chev{font-family:'JetBrains Mono',monospace;color:var(--text-faint);font-size:12px;transition:transform .15s ease;text-align:center;}
+.cmp-match.open .cm-chev{transform:rotate(180deg);color:var(--amber);}
+
+.cmp-detail{border-top:1px solid var(--line-soft);padding:10px 14px 14px;background:var(--bg-panel-2);}
+.cmp-detail-head{display:grid;grid-template-columns:110px 1fr 64px 64px 1fr;gap:10px;align-items:center;padding:6px 8px;font-size:10px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em;}
+.cd-row{display:grid;grid-template-columns:110px 1fr 64px 64px 1fr;gap:10px;align-items:center;padding:9px 8px;border-top:1px solid var(--line-soft);font-size:12px;}
+.cd-model{font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;color:var(--text);}
+.cd-hit{font-size:11px;margin-inline-start:4px;}
+.cd-hit.ok{color:var(--radiant);}
+.cd-hit.miss{color:var(--dire);}
+.cd-bar{height:16px;border-radius:3px;background:var(--bg-panel);overflow:hidden;display:flex;}
+.cd-fill-a{background:linear-gradient(90deg,var(--radiant-dim),var(--radiant));}
+.cd-fill-b{background:linear-gradient(90deg,var(--dire),var(--dire-dim));}
+.cd-pct{font-family:'JetBrains Mono',monospace;font-weight:700;text-align:center;}
+.cd-pct.a{color:var(--radiant);}
+.cd-pct.b{color:var(--dire);}
+.cd-win{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-dim);text-align:end;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cd-na{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);padding:9px 8px;border-top:1px solid var(--line-soft);}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+::selection{background:var(--radiant-dim);color:var(--text);}
+.hidden{display:none;}
+@media(max-width:800px){.sidebar{width:70px;padding:20px 8px;}.sidebar .brand,.sidebar .brand-sub,.sidebar .nav a span,.nav .group,.foot-note{display:none;}.main{padding:22px 16px 70px;}.cmp-row{grid-template-columns:110px repeat(5,1fr);}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">Forecast<span>Desk</span></div>
+    <div class="brand-sub">TI 2026 · 4 models</div>
+    <nav class="nav" id="nav"></nav>
+    <div class="lang-toggle" id="lang-toggle"></div>
+    <div class="foot-note">v1.0.0 · pre-event</div>
+  </aside>
+  <main class="main" id="view"></main>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+let DATA=null, SCHED=null, I18N={}, LANG = localStorage.getItem('fd-lang') || 'en';
+let ENCAT={}, FACAT={}, DAILY={}, SCORES={}, RESULTS={matchdays:[],results:[]};
+const MODEL_ORDER=['claude','gemini','chatgpt','hermes'];
+const MODEL_NAMES={claude:'Claude',gemini:'Gemini',chatgpt:'ChatGPT',hermes:'DeepSeek'};
+const mName=id=>MODEL_NAMES[id]||id;
+
+function t(k){ return I18N[k] || k; }
+function fmtP(x){ return x==null?'—':(Math.round(x*1000)/10)+'%'; }
+
+async function load(){
+  const [d,s,en,fa,dy,sc,rs]=await Promise.all([
+    fetch('data/forecast-desk.json?v=20260814h').then(r=>r.json()),
+    fetch('data/schedule.json?v=20260814h').then(r=>r.json()),
+    fetch('i18n/en.json?v=20260814h').then(r=>r.json()),
+    fetch('i18n/fa.json?v=20260814h').then(r=>r.json()),
+    fetch('data/daily-predictions.json?v=20260814h').then(r=>r.json()).catch(()=>({matchdays:[]})),
+    fetch('data/model-scores.json?v=20260814h').then(r=>r.json()).catch(()=>({models:{}})),
+    fetch('data/results.json?v=20260814h').then(r=>r.json()).catch(()=>({results:[]})),
+  ]);
+  DATA=d; SCHED=s.schedule; ENCAT=en; FACAT=fa; DAILY=dy; SCORES=sc; RESULTS=rs;
+  I18N = LANG==='fa'?FACAT:ENCAT;
+  applyLang(); buildNav(); route();
+}
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.documentElement.dir = LANG==='fa'?'rtl':'ltr';
+  document.title = t('app.title');
+  $('#lang-toggle').innerHTML = `<button class="${LANG==='en'?'on':''}" onclick="setLang('en')">EN</button><button class="${LANG==='fa'?'on':''}" onclick="setLang('fa')">فارسی</button>`;
+}
+function setLang(l){ LANG=l; localStorage.setItem('fd-lang',l); I18N = LANG==='fa'?FACAT:ENCAT; applyLang(); buildNav(); route(); }
+function buildNav(){
+  const groups=[['',t('nav.overview')],['today',t('nav.today')],['comparison',t('nav.comparison')]];
+  let h='';
+  h+=groups.map(([r,l])=>`<a href="#/${r}" data-r="${r||'overview'}"><span>${l}</span></a>`).join('');
+  h+=`<div class="group">${t('nav.models')}</div>`;
+  h+=MODEL_ORDER.map(id=>`<a href="#/model/${id}" data-r="model/${id}"><span>${mName(id)}</span></a>`).join('');
+  $('#nav').innerHTML=h;
+  const cur=location.hash.replace('#/','')||'overview';
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active',a.dataset.r===cur));
+}
+function route(){
+  const h=location.hash.replace('#/','')||'overview';
+  buildNav();
+  const [v,id]=h.split('/');
+  if(v==='model'&&DATA.models[id]) renderModel(id);
+  else if(v==='comparison') renderComparison();
+  else if(v==='today') renderDays();
+  else renderOverview();
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- overview ---------- */
+function overviewChampFantasy(){
+  let rows='';
+  for(const id of MODEL_ORDER){
+    const m=DATA.models[id];
+    const top3=(m.champion||[]).slice(0,3).map(c=>`<span style="color:var(--amber)">${c.team} ${fmtP(c.p_champion)}</span>`).join(' · ')||'—';
+    const picks=(m.fantasy&&m.fantasy.players||[]).map(p=>`P${p.position}:${p.player}`).join(' · ')||'—';
+    const total=m.fantasy&&m.fantasy.total!=null?` <b style="color:var(--radiant)">${m.fantasy.total}</b>`:'';
+    rows+=`<div class="cmp-row" style="grid-template-columns:130px 1fr 1fr">
+      <div class="c-team"><b>${mName(id)}</b></div>
+      <div class="cmp-num" style="text-align:start;font-size:12px">${top3}</div>
+      <div class="cmp-num" style="text-align:start;font-size:12px">${picks}${total}</div></div>`;
+  }
+  return `<div class="section"><div class="section-head"><span class="stage-tag">Top 3</span><h2>${t('cmp.champion')} · ${t('cmp.fantasy')}</h2><span class="section-note">${t('cmp.top3_note')}</span></div>
+    <div class="champ-panel"><div class="cmp-row head" style="grid-template-columns:130px 1fr 1fr"><div>${t('nav.models')}</div><div>${t('champ.top3')}</div><div>${t('model.fantasy')}</div></div>${rows}</div></div>`;
+}
+function renderOverview(){
+  const meta=DATA.event;
+  const zeroHist=['HULIGANI','Team Resilience'];
+  let cards='';
+  for(const id of MODEL_ORDER){
+    const m=DATA.models[id];
+    const champ=m.champion&&m.champion.length?m.champion[0].team:'—';
+    const ft=m.fantasy&&m.fantasy.total!=null?m.fantasy.total:'—';
+    cards+=`<a class="card" href="#/model/${id}">
+      <div class="c-name">${mName(id)}</div>
+      <div class="c-meta"><span>${t('overview.coverage')}: <b>${m.meta.coverage}</b></span>
+      <span>${t('overview.champ')}: <b>${champ}</b></span>
+      <span>${t('overview.fantasy')}: <b>${ft}</b></span></div>
+      <div class="c-go">${t('overview.open')} →</div></a>`;
+  }
+  $('#view').innerHTML=`
+    <div class="eyebrow"><span class="dot"></span>${t('app.title')}</div>
+    <h1>${t('app.title')}<span class="sub">${t('app.tagline')}</span></h1>
+    <div class="hero-meta">
+      <div><div class="m-label">${t('meta.as_of')}</div><div class="m-val mono">2026-08-13</div></div>
+      <div><div class="m-label">${t('meta.maps')}</div><div class="m-val mono">1,196</div></div>
+      <div><div class="m-label">${t('meta.half_life')}</div><div class="m-val mono">120d</div></div>
+      <div><div class="m-label">${t('meta.coverage')}</div><div class="m-val mono">4 × 32/32</div></div>
+      <div><div class="m-label">${t('meta.zero_history')}</div><div class="m-val warn mono">${zeroHist.join(' · ')}</div></div>
+    </div>
+    <div class="banner"><span class="pulse"></span><span>${t('status.pre')} — ${t('overview.subtitle')}</span></div>
+    <div class="section"><div class="section-head"><h2>${t('nav.models')}</h2></div><div class="cards">${cards}</div></div>
+    ${accuracyChart()}
+    ${overviewChampFantasy()}`;
+}
+
+/* ---------- match card ---------- */
+function chip(label,val){
+  if(val==null) return '';
+  const cls=val>0.08?'pos':(val<-0.08?'neg':'neu');
+  const sign=val>0?'+':'';
+  return `<span class="chip ${cls}">${label} ${sign}${Number(val).toFixed(2)}</span>`;
+}
+function matchCard(mid, p){
+  const s=SCHED.find(x=>x.match_id===mid); if(!s) return '';
+  const thin = (p.conf==='thin')||((p.pA==null));
+  const pA=p.pA, pB=p.pB;
+  const pApc=pA==null?50:pA*100, pBpc=pB==null?50:pB*100;
+  const srcDraw=(p.source_values&&p.source_values.pDraw>0)?` · ${t('match.draw')} ${Math.round(p.source_values.pDraw*100)}%`:'';
+  const f=p.factors||{};
+  return `<div class="match-card${thin?' thin-data':''}">
+    <div class="match-top"><span class="match-id mono">${s.match_id}</span>
+    <span class="match-format">${t('match.bo')}${s.best_of}</span>
+    ${thin?'<span class="thin-badge">'+t('model.thin_data')+'</span>':''}</div>
+    <div class="duel">
+      <div class="side a"><div class="team-name">${s.team_a_name}</div><div class="pct">${fmtP(pA)}</div></div>
+      <div class="vs-col"><div>vs</div><div style="color:var(--text-dim)">${s.round||''}</div></div>
+      <div class="side b"><div class="team-name">${s.team_b_name}</div><div class="pct">${fmtP(pB)}</div></div>
+      <div class="tug"><div class="tug-a" style="width:${pApc}%"></div><div class="tug-b" style="width:${pBpc}%"></div></div>
+    </div>
+    <div class="match-footer"><div class="factor-chips">${chip('base',f.base)}${chip('form',f.form)}${chip('h2h',f.h2h)}${chip('player',f.player)}${chip('draft',f.draft)}</div>
+    <div>${p.winner?('→ '+p.winner):''}${srcDraw}</div></div>
+  </div>`;
+}
+
+/* ---------- model view ---------- */
+function renderModel(id){
+  const m=DATA.models[id];
+  const champ=m.champion||[];
+  const maxP=Math.max(...champ.map(c=>c.p_champion||0),0.001);
+  const champHtml=champ.map((c,i)=>{
+    const tier=c.p_champion>=0.05?'':(c.p_champion>=0.01?'tier1':'tier3');
+    return `<div class="champ-row ${tier}"><div class="champ-rank mono">${String(i+1).padStart(2,'0')}</div>
+    <div class="champ-team">${c.team}</div><div class="champ-bar-track"><div class="champ-bar-fill" style="width:${Math.max((c.p_champion||0)/maxP*100,1.5)}%"></div></div>
+    <div class="champ-pct">${fmtP(c.p_champion)}</div></div>`;
+  }).join('');
+  const fr=m.fantasy;
+  const fantHtml=(fr.players&&fr.players.length)?fr.players.map(p=>`
+    <div class="player-card" data-pos="${p.position}"><div class="pc-pos">${t('fantasy.pos')} ${p.position}</div>
+    <div class="pc-name">${p.player}</div><div class="pc-team">${p.team}</div>
+    <div class="pc-stat-row"><span>${t('fantasy.ppg')}</span><b>${p.points_per_map!=null?p.points_per_map:'—'}</b></div>
+    <div class="pc-stat-row"><span>${t('fantasy.ep')}</span><b>${p.expected_maps!=null?p.expected_maps:'—'}</b></div>
+    <div class="pc-ep"><span class="pc-ep-label">${t('fantasy.ep')}</span><span class="pc-ep-val">${p.predicted_fantasy_points!=null?p.predicted_fantasy_points:'—'}</span></div></div>`).join('')
+    :`<div class="empty-fantasy">${t('warn.no_fantasy')}</div>`;
+  const warns=(m.warnings||[]).map(w=>`<li>${w}</li>`).join('');
+  $('#view').innerHTML=`
+    <div class="eyebrow"><span class="dot"></span>${t('nav.models')} · ${mName(id)}</div>
+    <h1>${mName(id)}<span class="sub">${t('model.method')}: ${m.champion&&m.champion.length?m.champion[0].team:'—'}</span></h1>
+    <div class="banner"><span class="pulse"></span><span>${t('status.pre')} — ${t('model.draw_note')}</span></div>
+    <div class="section"><div class="section-head"><span class="stage-tag">MC</span><h2>${t('model.champion')}</h2><span class="section-note">${champ.length} · ${t('champ.top3')}</span></div><div class="champ-panel">${champHtml}</div></div>
+    <div class="section"><div class="section-head"><span class="stage-tag">Matchday</span><h2>${t('model.fantasy')}</h2></div>
+    <div class="roster-grid">${fantHtml}</div>
+    ${fr.total!=null?`<div class="roster-total"><div class="rt-label">${t('model.fantasy_total')}</div><div class="rt-val">${fr.total}</div></div>`:''}</div>
+    ${warns?`<div class="section"><div class="caveats"><h3>⚠ ${t('model.warnings')}</h3><ol>${warns}</ol></div></div>`:''}`;
+}
+
+/* ---------- today ---------- */
+function dailyPredsByMatch(){
+  // {match_id: {model: pA}}
+  const out={};
+  for(const md of (DAILY.matchdays||[])){
+    for(const [model,info] of Object.entries(md.models||{})){
+      for(const [mid,p] of Object.entries(info.predictions||{})){
+        if(p.p_team_a_win!=null){ out[mid]=out[mid]||{}; out[mid][model]=p.p_team_a_win; }
+      }
+    }
+  }
+  return out;
+}
+function renderDays(){
+  const preds=dailyPredsByMatch();
+  const resMap={}; for(const r of (RESULTS.results||[])) resMap[r.match_id]=r;
+  const anyPreds=Object.keys(preds).length>0;
+  const resultCell=s=>{
+    const r=resMap[s.match_id]||{status:s.status,winner:s.winner,score:s.score};
+    if(r.status==='completed'&&r.winner){
+      const cls=r.winner===s.team_a_name?'color:var(--radiant)':'color:var(--dire)';
+      return `<td class="cmp-num" style="${cls};font-weight:700">${r.winner} ${r.score?`(${r.score.winner_maps}-${r.score.loser_maps})`:''}</td>`;
+    }
+    if(r.status==='live') return `<td class="cmp-num" style="color:var(--amber)">● ${t('result.live')}</td>`;
+    return `<td class="cmp-num" style="color:var(--text-faint)">${t('result.pending')}</td>`;
+  };
+  const rowFor=s=>{
+    const cells=MODEL_ORDER.map(id=>{
+      const pa=preds[s.match_id]&&preds[s.match_id][id];
+      if(pa==null) return `<td class="c cmp-num" style="color:var(--text-faint)">—</td>`;
+      const hit= s.winner && ((pa>=0.5&&s.winner===s.team_a_name)||(pa<0.5&&s.winner===s.team_b_name));
+      return `<td class="c cmp-num" style="${hit?'color:var(--radiant);font-weight:700':''}">${Math.round(pa*100)}%</td>`;
+    }).join('');
+    const vals=MODEL_ORDER.map(id=>preds[s.match_id]&&preds[s.match_id][id]).filter(v=>v!=null);
+    const cons=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+    return `<div class="cmp-row" style="grid-template-columns:150px 1fr ${MODEL_ORDER.map(()=>'1fr').join(' ')} 170px">
+      <div class="c-team">${s.match_id}<br><span style="color:var(--text)">${s.team_a_name}</span> vs <span style="color:var(--text)">${s.team_b_name}</span><br><span style="color:var(--text-faint);font-size:10.5px">${s.round}${s.pool?' · '+s.pool:''}</span></div>
+      <div class="cmp-num" style="color:var(--amber);font-weight:700">${cons==null?'—':Math.round(cons*100)+'%'}</div>
+      ${cells}${resultCell(s)}</div>`;
+  };
+  const head=`<div class="cmp-row head" style="grid-template-columns:150px 1fr ${MODEL_ORDER.map(()=>'1fr').join(' ')} 170px"><div>${t('cmp.match')}</div><div>${t('today.consensus')}</div>${MODEL_ORDER.map(m=>`<div class="c">${mName(m)}</div>`).join('')}<div>${t('today.result')}</div></div>`;
+  let daysHtml='';
+  for(let d=1; d<=4; d++){
+    const ms=SCHED.filter(s=>s.day===d).sort((a,b)=>a.matchday_order-b.matchday_order);
+    const dayStatus=ms.every(m=>m.status==='completed')?'✓':(ms.some(m=>m.status==='live')?'●':'');
+    daysHtml+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · BO2</span></div>
+      ${head}${ms.map(rowFor).join('')}</div>`;
+  }
+  $('#view').innerHTML=`
+    <div class="eyebrow"><span class="dot"></span>${t('days.title')}</div>
+    <h1>${t('days.title')}<span class="sub">${t('days.subtitle')}</span></h1>
+    <div class="banner"><span class="pulse"></span><span>${anyPreds?t('status.pre'):t('today.pending_preds')}</span></div>
+    ${daysHtml}`;
+}
+
+/* ---------- live accuracy chart ---------- */
+function accuracyChart(){
+  const models=SCORES.models||{};
+  const have=MODEL_ORDER.filter(id=>models[id]&&models[id].matches_scored>0);
+  if(!have.length){
+    return `<div class="section"><div class="section-head"><span class="stage-tag" style="background:var(--amber)">LIVE</span><h2>${t('chart.title')}</h2></div>
+      <div class="banner"><span class="pulse"></span><span>${t('chart.empty')}</span></div></div>`;
+  }
+  const cum=SCORES.cumulative||{};
+  let rows='';
+  for(const id of have){
+    const m=models[id];
+    const c=cum[id]||[];
+    const last=c.length?c[c.length-1]:null;
+    const acc=last?last.winner_accuracy_percent:null;
+    const brier=last?last.brier_score:null;
+    const roundDots=(c||[]).map(x=>`<span title="R${x.round}: ${x.winner_accuracy_percent}% (N=${x.n})" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-inline-end:3px;opacity:${0.5+x.n/40}"></span>`).join('');
+    rows+=`<div class="cmp-row" style="grid-template-columns:150px 1fr 90px 110px 120px">
+      <div class="c-team"><b>${mName(id)}</b></div>
+      <div class="cmp-bar" style="height:18px"><div class="fill" style="width:${acc==null?0:acc}%"></div></div>
+      <div class="cmp-num" style="font-weight:700;color:var(--radiant)">${acc==null?'—':acc.toFixed(1)+'%'}</div>
+      <div class="cmp-num">${brier==null?'—':brier.toFixed(4)}</div>
+      <div class="cmp-num">${roundDots}</div></div>`;
+  }
+  return `<div class="section"><div class="section-head"><span class="stage-tag" style="background:var(--amber)">LIVE</span><h2>${t('chart.title')}</h2><span class="section-note">${t('chart.cumulative')} · ${t('chart.lower_better')}</span></div>
+    <div class="champ-panel"><div class="cmp-row head" style="grid-template-columns:150px 1fr 90px 110px 120px"><div>${t('nav.models')}</div><div>${t('chart.accuracy')}</div><div>%</div><div>${t('chart.brier')}</div><div>${t('chart.daily')}</div></div>${rows}</div></div>`;
+}
+function renderComparison(){
+  // champion + fantasy comparison (kept above), then clickable match cards per day.
+  const preds=dailyPredsByMatch();  // {match_id: {model: pA}}
+  const resMap={}; for(const r of (RESULTS.results||[])) resMap[r.match_id]=r;
+
+  let champRows='';
+  const champTeams={};
+  for(const id of MODEL_ORDER){
+    const c=DATA.models[id].champion||[];
+    champTeams[id]=c.length?c[0].team:'—';
+  }
+  champRows=MODEL_ORDER.map(id=>`<div class="cmp-row"><div class="c-team">${mName(id)}</div><div class="cmp-num" style="text-align:start">${champTeams[id]}</div></div>`).join('');
+
+  let fantRows='';
+  for(const id of MODEL_ORDER){
+    const fr=DATA.models[id].fantasy;
+    const picks=(fr.players||[]).map(p=>`P${p.position}:${p.player}`).join(' · ')||t('warn.no_fantasy');
+    fantRows+=`<div class="cmp-row"><div class="c-team">${mName(id)}</div><div class="cmp-num" style="text-align:start">${picks}${fr.total!=null?' — <b>'+fr.total+'</b>':''}</div></div>`;
+  }
+
+  // match cards
+  function matchCardHTML(s){
+    const mid=s.match_id;
+    const paFor=id=>preds[mid]&&preds[mid][id]!=null?preds[mid][id]:null;
+    const vals=MODEL_ORDER.map(paFor).filter(v=>v!=null);
+    const cons=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+    // result cell
+    const r=resMap[mid];
+    let rCls='pending', rTxt=t('result.pending');
+    if(r&&r.status==='completed'&&r.winner){
+      rCls = r.winner===s.team_a_name?'win-a':'win-b';
+      rTxt = `${r.winner} ${r.score?`(${r.score.winner_maps}-${r.score.loser_maps})`:''}`;
+    } else if(r&&r.status==='live' || s.status==='live'){
+      rCls='live'; rTxt='● '+t('result.live');
+    }
+    // detail rows
+    let dRows='';
+    for(const id of MODEL_ORDER){
+      const pa=paFor(id);
+      if(pa==null){
+        dRows+=`<div class="cd-na">${mName(id)}: ${t('cmp.na')}</div>`;
+        continue;
+      }
+      const pb=1-pa;
+      const hit= (r&&r.winner) ? ((pa>=0.5&&r.winner===s.team_a_name)||(pa<0.5&&r.winner===s.team_b_name)) : null;
+      const hitHtml = hit==null ? '' : (hit?`<span class="cd-hit ok">✓</span>`:`<span class="cd-hit miss">✗</span>`);
+      const winName = pa>=0.5?s.team_a_name:s.team_b_name;
+      dRows+=`<div class="cd-row">
+        <div class="cd-model">${mName(id)}${hitHtml}</div>
+        <div class="cd-bar"><div class="cd-fill-a" style="width:${pa*100}%"></div><div class="cd-fill-b" style="width:${pb*100}%"></div></div>
+        <div class="cd-pct a">${Math.round(pa*100)}%</div>
+        <div class="cd-pct b">${Math.round(pb*100)}%</div>
+        <div class="cd-win">→ ${winName}</div></div>`;
+    }
+    return `<div class="cmp-match" data-mid="${mid}">
+      <div class="cmp-match-head" onclick="toggleMatch('${mid}')">
+        <div class="cm-id">${mid}</div>
+        <div class="cm-format">BO${s.best_of}</div>
+        <div class="cm-duel">
+          <div class="cm-side a"><div class="cm-team">${s.team_a_name}</div><div class="cm-pct">${cons==null?'—':Math.round(cons*100)+'%'}</div></div>
+          <div class="cm-vs">vs</div>
+          <div class="cm-side b"><div class="cm-pct">${cons==null?'—':Math.round((1-cons)*100)+'%'}</div><div class="cm-team">${s.team_b_name}</div></div>
+        </div>
+        <div class="cm-consensus"><span class="lbl">${t('today.consensus')}</span><span class="val">${cons==null?'—':fmtP(cons)}</span></div>
+        <div class="cm-result ${rCls}">${rTxt}</div>
+        <div class="cm-chev">▾</div>
+      </div>
+      <div class="cmp-detail hidden">
+        <div class="cmp-detail-head"><div>${t('nav.models')}</div><div>${t('match.a_win')} / ${t('match.b_win')}</div><div>pA</div><div>pB</div><div>${t('today.result')}</div></div>
+        ${dRows}
+      </div>
+    </div>`;
+  }
+
+  let daysHtml='';
+  for(let d=1; d<=4; d++){
+    const ms=SCHED.filter(s=>s.day===d).sort((a,b)=>a.matchday_order-b.matchday_order);
+    if(!ms.length) continue;
+    const dayStatus=ms.every(m=>m.status==='completed')?'✓':(ms.some(m=>m.status==='live')?'●':'');
+    daysHtml+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · BO2</span></div>
+      ${ms.map(matchCardHTML).join('')}</div>`;
+  }
+
+  $('#view').innerHTML=`
+    <div class="eyebrow"><span class="dot"></span>${t('cmp.title')}</div>
+    <h1>${t('cmp.title')}<span class="sub">${t('cmp.subtitle')}</span></h1>
+    <div class="banner"><span class="pulse"></span><span>${t('cmp.hint')}</span></div>
+    ${daysHtml}
+    <div class="section"><div class="section-head"><h2>${t('cmp.champion')}</h2><span class="section-note">${t('champ.top3')} · ${t('cmp.top3_note')}</span></div><div class="champ-panel">${champRows}</div></div>
+    <div class="section"><div class="section-head"><h2>${t('cmp.fantasy')}</h2></div><div class="champ-panel">${fantRows}</div></div>`;
+}
+function toggleMatch(mid){
+  const el=document.querySelector(`.cmp-match[data-mid="${mid}"]`);
+  if(!el) return;
+  const det=el.querySelector('.cmp-detail');
+  el.classList.toggle('open');
+  det.classList.toggle('hidden');
+}
+// robust event delegation (works even if inline onclick is blocked by CSP)
+document.addEventListener('click', function(e){
+  const head = e.target && e.target.closest ? e.target.closest('.cmp-match-head') : null;
+  if(!head) return;
+  const card = head.closest('.cmp-match');
+  if(!card) return;
+  toggleMatch(card.getAttribute('data-mid'));
+});
+
+load();
+</script>
+</body>
+</html>

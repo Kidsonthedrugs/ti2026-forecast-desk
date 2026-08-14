@@ -1,0 +1,494 @@
+{
+ "schema_version": "1.0.0",
+ "generated_at": "2026-08-14",
+ "results": [
+  {
+   "match_id": "TI2026-M01",
+   "round": "R1",
+   "pool": null,
+   "team_a": "Team Falcons",
+   "team_b": "LGD Gaming",
+   "status": "completed",
+   "winner": "Team Falcons",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M02",
+   "round": "R1",
+   "pool": null,
+   "team_a": "1w Team (ex-Tundra)",
+   "team_b": "Nigma Galaxy",
+   "status": "completed",
+   "winner": "1w Team (ex-Tundra)",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M03",
+   "round": "R1",
+   "pool": null,
+   "team_a": "BetBoom Team",
+   "team_b": "OG",
+   "status": "completed",
+   "winner": "BetBoom Team",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M04",
+   "round": "R1",
+   "pool": null,
+   "team_a": "PARIVISION",
+   "team_b": "Team Resilience",
+   "status": "completed",
+   "winner": "PARIVISION",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M05",
+   "round": "R1",
+   "pool": null,
+   "team_a": "Team Spirit",
+   "team_b": "Xtreme Gaming",
+   "status": "completed",
+   "winner": "Team Spirit",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M06",
+   "round": "R1",
+   "pool": null,
+   "team_a": "Team Liquid",
+   "team_b": "Vici Gaming",
+   "status": "completed",
+   "winner": "Team Liquid",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M07",
+   "round": "R1",
+   "pool": null,
+   "team_a": "Aurora Gaming",
+   "team_b": "GamerLegion",
+   "status": "completed",
+   "winner": "Aurora Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M08",
+   "round": "R1",
+   "pool": null,
+   "team_a": "Team Yandex",
+   "team_b": "HULIGANI",
+   "status": "completed",
+   "winner": "Team Yandex",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M09",
+   "round": "R2",
+   "pool": "1-0",
+   "team_a": "PARIVISION",
+   "team_b": "Team Falcons",
+   "status": "completed",
+   "winner": "PARIVISION",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M10",
+   "round": "R2",
+   "pool": "1-0",
+   "team_a": "BetBoom Team",
+   "team_b": "1w Team (ex-Tundra)",
+   "status": "completed",
+   "winner": "BetBoom Team",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M11",
+   "round": "R2",
+   "pool": "1-0",
+   "team_a": "Team Spirit",
+   "team_b": "Aurora Gaming",
+   "status": "completed",
+   "winner": "Team Spirit",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M12",
+   "round": "R2",
+   "pool": "1-0",
+   "team_a": "Team Liquid",
+   "team_b": "Team Yandex",
+   "status": "completed",
+   "winner": "Team Liquid",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M13",
+   "round": "R2",
+   "pool": "0-1",
+   "team_a": "LGD Gaming",
+   "team_b": "Team Resilience",
+   "status": "completed",
+   "winner": "LGD Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M14",
+   "round": "R2",
+   "pool": "0-1",
+   "team_a": "Nigma Galaxy",
+   "team_b": "OG",
+   "status": "completed",
+   "winner": "Nigma Galaxy",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M15",
+   "round": "R2",
+   "pool": "0-1",
+   "team_a": "GamerLegion",
+   "team_b": "Xtreme Gaming",
+   "status": "completed",
+   "winner": "GamerLegion",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M16",
+   "round": "R2",
+   "pool": "0-1",
+   "team_a": "Vici Gaming",
+   "team_b": "HULIGANI",
+   "status": "completed",
+   "winner": "Vici Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M17",
+   "round": "R3",
+   "pool": "2-0",
+   "team_a": "PARIVISION",
+   "team_b": "BetBoom Team",
+   "status": "completed",
+   "winner": "PARIVISION",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M18",
+   "round": "R3",
+   "pool": "2-0",
+   "team_a": "Team Spirit",
+   "team_b": "Team Liquid",
+   "status": "completed",
+   "winner": "Team Spirit",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M19",
+   "round": "R3",
+   "pool": "1-1",
+   "team_a": "1w Team (ex-Tundra)",
+   "team_b": "Team Falcons",
+   "status": "completed",
+   "winner": "1w Team (ex-Tundra)",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M20",
+   "round": "R3",
+   "pool": "1-1",
+   "team_a": "Nigma Galaxy",
+   "team_b": "LGD Gaming",
+   "status": "completed",
+   "winner": "Nigma Galaxy",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M21",
+   "round": "R3",
+   "pool": "1-1",
+   "team_a": "Aurora Gaming",
+   "team_b": "Team Yandex",
+   "status": "completed",
+   "winner": "Aurora Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M22",
+   "round": "R3",
+   "pool": "1-1",
+   "team_a": "Vici Gaming",
+   "team_b": "GamerLegion",
+   "status": "completed",
+   "winner": "Vici Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M23",
+   "round": "R3",
+   "pool": "0-2",
+   "team_a": "Team Resilience",
+   "team_b": "OG",
+   "status": "completed",
+   "winner": "Team Resilience",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M24",
+   "round": "R3",
+   "pool": "0-2",
+   "team_a": "Xtreme Gaming",
+   "team_b": "HULIGANI",
+   "status": "completed",
+   "winner": "Xtreme Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M25",
+   "round": "R4",
+   "pool": "3-0",
+   "team_a": "PARIVISION",
+   "team_b": "Team Spirit",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M26",
+   "round": "R4",
+   "pool": "2-1",
+   "team_a": "1w Team (ex-Tundra)",
+   "team_b": "Team Liquid",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M27",
+   "round": "R4",
+   "pool": "2-1",
+   "team_a": "BetBoom Team",
+   "team_b": "Aurora Gaming",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M28",
+   "round": "R4",
+   "pool": "2-1",
+   "team_a": "Nigma Galaxy",
+   "team_b": "Vici Gaming",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M29",
+   "round": "R4",
+   "pool": "1-2",
+   "team_a": "LGD Gaming",
+   "team_b": "Xtreme Gaming",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M30",
+   "round": "R4",
+   "pool": "1-2",
+   "team_a": "Team Falcons",
+   "team_b": "GamerLegion",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M31",
+   "round": "R4",
+   "pool": "1-2",
+   "team_a": "Team Resilience",
+   "team_b": "Team Yandex",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  },
+  {
+   "match_id": "TI2026-M32",
+   "round": "R4",
+   "pool": "0-3",
+   "team_a": "OG",
+   "team_b": "HULIGANI",
+   "status": "live",
+   "winner": null,
+   "score": null,
+   "completed_at": null,
+   "source": "liquipedia (user capture 2026-08-14)",
+   "verified": true
+  }
+ ]
+}

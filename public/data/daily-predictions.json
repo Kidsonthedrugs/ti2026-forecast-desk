@@ -1,0 +1,304 @@
+{
+ "schema_version": "1.0.0",
+ "matchdays": [
+  {
+   "matchday_id": "day-01",
+   "date": "2026-08-13",
+   "round": "R1",
+   "data_version": "v1.0.0",
+   "submitted_at": "2026-08-14T20:21:58",
+   "matches": [
+    {
+     "match_id": "TI2026-M01",
+     "team_a": "Team Falcons",
+     "team_b": "LGD Gaming",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M02",
+     "team_a": "1w Team (ex-Tundra)",
+     "team_b": "Nigma Galaxy",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M03",
+     "team_a": "BetBoom Team",
+     "team_b": "OG",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M04",
+     "team_a": "PARIVISION",
+     "team_b": "Team Resilience",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M05",
+     "team_a": "Team Spirit",
+     "team_b": "Xtreme Gaming",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M06",
+     "team_a": "Team Liquid",
+     "team_b": "Vici Gaming",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M07",
+     "team_a": "Aurora Gaming",
+     "team_b": "GamerLegion",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-M08",
+     "team_a": "Team Yandex",
+     "team_b": "HULIGANI",
+     "best_of": 2
+    }
+   ],
+   "models": {
+    "gemini": {
+     "predictions": {
+      "TI2026-M01": {
+       "p_team_a_win": 0.78,
+       "p_team_b_win": 0.22,
+       "predicted_winner": "Team Falcons",
+       "confidence": 76,
+       "reasoning": "Falcons holds dominant baseline rating and top-tier player composite metrics over LGD's newly assembled roster."
+      },
+      "TI2026-M02": {
+       "p_team_a_win": 0.71,
+       "p_team_b_win": 0.29,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 70,
+       "reasoning": "1w Team demonstrates superior lane phase conversion and higher weighted performance indices across recent tier-1 LANs."
+      },
+      "TI2026-M03": {
+       "p_team_a_win": 0.68,
+       "p_team_b_win": 0.32,
+       "predicted_winner": "BetBoom Team",
+       "confidence": 67,
+       "reasoning": "BetBoom Team's commanding laning differentials and individual player composite ratings provide a substantial series edge over OG."
+      },
+      "TI2026-M04": {
+       "p_team_a_win": 0.83,
+       "p_team_b_win": 0.17,
+       "predicted_winner": "PARIVISION",
+       "confidence": 82,
+       "reasoning": "Significant baseline Elo disparity and superior draft-meta efficiency heavily favor PARIVISION against the regional qualifier."
+      },
+      "TI2026-M05": {
+       "p_team_a_win": 0.56,
+       "p_team_b_win": 0.44,
+       "predicted_winner": "Team Spirit",
+       "confidence": 55,
+       "reasoning": "Closely contested heavyweight series where Spirit holds a slight edge in recent form and late-game decision-making."
+      },
+      "TI2026-M06": {
+       "p_team_a_win": 0.74,
+       "p_team_b_win": 0.26,
+       "predicted_winner": "Team Liquid",
+       "confidence": 72,
+       "reasoning": "Liquid's versatile draft meta pool and higher core performance indices give them a solid advantage over Vici Gaming."
+      },
+      "TI2026-M07": {
+       "p_team_a_win": 0.72,
+       "p_team_b_win": 0.28,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 71,
+       "reasoning": "Aurora's superior laning phase stability and stronger historical tournament placements position them ahead of GamerLegion."
+      },
+      "TI2026-M08": {
+       "p_team_a_win": 0.77,
+       "p_team_b_win": 0.23,
+       "predicted_winner": "Team Yandex",
+       "confidence": 75,
+       "reasoning": "Team Yandex benefits from proven tier-1 competition experience against HULIGANI's uncalibrated roster prior."
+      }
+     }
+    },
+    "chatgpt": {
+     "predictions": {
+      "TI2026-M01": {
+       "p_team_a_win": 0.53,
+       "p_team_b_win": 0.47,
+       "predicted_winner": "Team Falcons",
+       "confidence": 53,
+       "reasoning": "Base 0.22 and laning 0.19 favor Team Falcons, while draft -0.61 favors LGD; coverage 0.90 keeps it close."
+      },
+      "TI2026-M02": {
+       "p_team_a_win": 0.44,
+       "p_team_b_win": 0.56,
+       "predicted_winner": "Nigma Galaxy",
+       "confidence": 55,
+       "reasoning": "Base 0.12 and player 0.02 favor 1w Team, but laning -0.26 and draft -0.57 favor Nigma; coverage 0.90."
+      },
+      "TI2026-M03": {
+       "p_team_a_win": 0.68,
+       "p_team_b_win": 0.32,
+       "predicted_winner": "BetBoom Team",
+       "confidence": 68,
+       "reasoning": "BetBoom lead on base 0.38 and draft 0.63, with positive laning 0.15; full coverage supports the edge."
+      },
+      "TI2026-M04": {
+       "p_team_a_win": 0.56,
+       "p_team_b_win": 0.44,
+       "predicted_winner": "PARIVISION",
+       "confidence": 53,
+       "reasoning": "PARIVISION lead base 0.33 and form 0.29, but Team Resilience has no historical team maps; coverage falls to 0.45."
+      },
+      "TI2026-M05": {
+       "p_team_a_win": 0.6,
+       "p_team_b_win": 0.4,
+       "predicted_winner": "Team Spirit",
+       "confidence": 60,
+       "reasoning": "Team Spirit's base 0.23 and draft 0.36 offset negative laning -0.31; full coverage keeps the estimate moderately confident."
+      },
+      "TI2026-M06": {
+       "p_team_a_win": 0.62,
+       "p_team_b_win": 0.38,
+       "predicted_winner": "Team Liquid",
+       "confidence": 62,
+       "reasoning": "Team Liquid lead on base 0.25, player 0.09 and draft 0.42, despite laning -0.23."
+      },
+      "TI2026-M07": {
+       "p_team_a_win": 0.73,
+       "p_team_b_win": 0.27,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 73,
+       "reasoning": "Aurora lead strongly on base 0.54, player 0.14 and draft 0.70, with full coverage."
+      },
+      "TI2026-M08": {
+       "p_team_a_win": 0.56,
+       "p_team_b_win": 0.44,
+       "predicted_winner": "Team Yandex",
+       "confidence": 54,
+       "reasoning": "Team Yandex lead base 0.26, form 0.33 and player 0.15; HULIGANI lacks team history, so coverage is 0.55."
+      }
+     }
+    },
+    "hermes": {
+     "predictions": {
+      "TI2026-M01": {
+       "p_team_a_win": 0.69,
+       "p_team_b_win": 0.31,
+       "predicted_winner": "Team Falcons",
+       "confidence": 62,
+       "reasoning": "Falcons' higher player composite, draft/meta fit, and recent 1win runner-up form outweigh LGD's unrated Topson/KJ maps."
+      },
+      "TI2026-M02": {
+       "p_team_a_win": 0.68,
+       "p_team_b_win": 0.32,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 58,
+       "reasoning": "1w's deep hero pool and stronger EWC/1win placement history give a clear base/form edge over Nigma."
+      },
+      "TI2026-M03": {
+       "p_team_a_win": 0.65,
+       "p_team_b_win": 0.35,
+       "predicted_winner": "BetBoom Team",
+       "confidence": 52,
+       "reasoning": "BetBoom's season-long top-4 consistency and sturdier player composite edge OG's erratic map win rate."
+      },
+      "TI2026-M04": {
+       "p_team_a_win": 0.75,
+       "p_team_b_win": 0.25,
+       "predicted_winner": "PARIVISION",
+       "confidence": 60,
+       "reasoning": "PARIVISION's champion-level form and ratings dominate a Resilience roster with mostly neutral-prior starters."
+      },
+      "TI2026-M05": {
+       "p_team_a_win": 0.6,
+       "p_team_b_win": 0.4,
+       "predicted_winner": "Team Spirit",
+       "confidence": 45,
+       "reasoning": "Spirit's EWC title and form edge only narrowly clear Xtreme's high-variance but talented lineup."
+      },
+      "TI2026-M06": {
+       "p_team_a_win": 0.72,
+       "p_team_b_win": 0.28,
+       "predicted_winner": "Team Liquid",
+       "confidence": 64,
+       "reasoning": "Liquid's 1win championship run, higher ratings, and recent H2H win over Vici drive the edge."
+      },
+      "TI2026-M07": {
+       "p_team_a_win": 0.78,
+       "p_team_b_win": 0.22,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 68,
+       "reasoning": "Aurora's multiple finals appearances and stronger player composite comfortably clear GamerLegion."
+      },
+      "TI2026-M08": {
+       "p_team_a_win": 0.69,
+       "p_team_b_win": 0.31,
+       "predicted_winner": "Team Yandex",
+       "confidence": 50,
+       "reasoning": "Yandex's BLAST VII title and superior rated core outweigh HULIGANI's near-zero team-level sample."
+      }
+     }
+    },
+    "claude": {
+     "predictions": {
+      "TI2026-M01": {
+       "p_team_a_win": 0.65,
+       "p_team_b_win": 0.35,
+       "predicted_winner": "Team Falcons",
+       "confidence": 62,
+       "reasoning": "S_base favors Falcons (0.62 weighted map WR, EWC and 1win finalist) over LGD (0.47-0.52 core WR); player composite edge via ATF 5.457 and Malr1ne 5.176 versus LGD's zero-history Topson at pos2, with coverage shrunk for LGD's roster change giving p_map about 0.60."
+      },
+      "TI2026-M02": {
+       "p_team_a_win": 0.7,
+       "p_team_b_win": 0.3,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 68,
+       "reasoning": "1w carries DL28/ESL titles plus EWC 4th and 1win 3rd with Pure 5.255 and bzm 5.116, while Nigma's cores sit at 0.39-0.47 win rates; H2H in window is near even (Nigma took the EWC pair) so h2h shrinks the edge to p_map about 0.64."
+      },
+      "TI2026-M03": {
+       "p_team_a_win": 0.76,
+       "p_team_b_win": 0.24,
+       "predicted_winner": "BetBoom Team",
+       "confidence": 73,
+       "reasoning": "BetBoom's base rating (0.58 weighted WR, PGL Wallachia S8 title, EWC top-8, 1win 4th) far exceeds OG's 0.38-0.39 player win rates, and the recent 1win BO3 went BetBoom 2-1, giving p_map about 0.68 after coverage."
+      },
+      "TI2026-M04": {
+       "p_team_a_win": 0.8,
+       "p_team_b_win": 0.2,
+       "predicted_winner": "PARIVISION",
+       "confidence": 74,
+       "reasoning": "PARIVISION has the strongest measured base in the pool (0.64 weighted WR, DL S29 champion, EWC 3rd, Satanic 5.284) while Team Resilience has zero team-level maps and four zero-history players on neutral 5.0 priors, so the edge is large but coverage-shrunk to p_map about 0.71."
+      },
+      "TI2026-M05": {
+       "p_team_a_win": 0.7,
+       "p_team_b_win": 0.3,
+       "predicted_winner": "Team Spirit",
+       "confidence": 66,
+       "reasoning": "Form deviation strongly favors Spirit (EWC 2026 champion on 7.41d, Collapse 5.165) versus Xtreme's 0.46-0.50 player win rates and 11th at BLAST SLAM VII, though H2H in window is mixed (Xtreme won the ESL LB series) holding p_map near 0.64."
+      },
+      "TI2026-M06": {
+       "p_team_a_win": 0.73,
+       "p_team_b_win": 0.27,
+       "predicted_winner": "Team Liquid",
+       "confidence": 69,
+       "reasoning": "Liquid's base and form lead (1win Essence II champion undefeated in playoffs, miCKe 5.114 and Nisha 5.155 at 0.60 WR) outweigh Vici's 0.45-0.51 core win rates, and the only in-window H2H went Liquid 2-1, giving p_map about 0.66."
+      },
+      "TI2026-M07": {
+       "p_team_a_win": 0.81,
+       "p_team_b_win": 0.19,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 77,
+       "reasoning": "Aurora posts 0.61-0.63 weighted win rates with PGL and DL S29 finals, while GamerLegion's whole roster sits at 0.33-0.35 with ratings below 5.0; in-window H2H (DL S29 2-0 Aurora) reinforces p_map about 0.72."
+      },
+      "TI2026-M08": {
+       "p_team_a_win": 0.85,
+       "p_team_b_win": 0.15,
+       "predicted_winner": "Team Yandex",
+       "confidence": 80,
+       "reasoning": "Yandex are BLAST SLAM VII champions and ESL runners-up with Saksa 5.360 and watson 5.087, whereas HULIGANI have no team-level maps and only sparse prior-team player rows (ssnovv1 0.10 and Corrupted 0.30 win rates), so p_map about 0.75 after the coverage penalty."
+      }
+     }
+    }
+   }
+  }
+ ]
+}

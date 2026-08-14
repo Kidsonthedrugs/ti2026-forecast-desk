@@ -1,0 +1,468 @@
+{
+ "schema_version": "2.0.0",
+ "event": {
+  "name": "TI 2026",
+  "format": "swiss",
+  "dates": "2026-08-13/2026-08-23"
+ },
+ "generated_at": "2026-08-14",
+ "schedule_version": "swiss-2026-08-14",
+ "models": {
+  "gemini": {
+   "meta": {
+    "source": "gemini",
+    "coverage": "champ 8 · fantasy 5"
+   },
+   "match_predictions": {},
+   "champion": [
+    {
+     "team": "Team Spirit",
+     "p_champion": 0.26
+    },
+    {
+     "team": "Team Falcons",
+     "p_champion": 0.19
+    },
+    {
+     "team": "PARIVISION",
+     "p_champion": 0.13
+    },
+    {
+     "team": "BetBoom Team",
+     "p_champion": 0.11
+    },
+    {
+     "team": "Team Liquid",
+     "p_champion": 0.09
+    },
+    {
+     "team": "Aurora Gaming",
+     "p_champion": 0.07
+    },
+    {
+     "team": "Team Yandex",
+     "p_champion": 0.05
+    },
+    {
+     "team": "1w Team (ex-Tundra)",
+     "p_champion": 0.04
+    }
+   ],
+   "fantasy": {
+    "players": [
+     {
+      "position": 1,
+      "player": "Satanic",
+      "team": "PARIVISION",
+      "expected_maps": 4.0,
+      "points_per_map": 16.2,
+      "predicted_fantasy_points": 64.8
+     },
+     {
+      "position": 2,
+      "player": "Malr1ne",
+      "team": "Team Falcons",
+      "expected_maps": 4.0,
+      "points_per_map": 15.1,
+      "predicted_fantasy_points": 60.4
+     },
+     {
+      "position": 3,
+      "player": "ATF",
+      "team": "Team Falcons",
+      "expected_maps": 4.0,
+      "points_per_map": 15.4,
+      "predicted_fantasy_points": 61.6
+     },
+     {
+      "position": 4,
+      "player": "9Class",
+      "team": "PARIVISION",
+      "expected_maps": 4.0,
+      "points_per_map": 15.0,
+      "predicted_fantasy_points": 60.0
+     },
+     {
+      "position": 5,
+      "player": "Kataomi`",
+      "team": "BetBoom Team",
+      "expected_maps": 4.0,
+      "points_per_map": 13.1,
+      "predicted_fantasy_points": 52.4
+     }
+    ],
+    "total": 299.2
+   },
+   "warnings": [
+    "Used canonical alias '1w Team (ex-Tundra)' for historical 'Tundra Esports' rows.",
+    "PLAYERS_80 players with zero historical maps default to neutral prior rating 5.0 and uncertainty 2.94: Topson, KJ, Mirage`, sayuw, YSR-04E, Echozz, niu, zzq.",
+    "lane_outcome_score absent in per-map stats; applied z(lh_10)/z(net_worth) fallback per Section 3.5.",
+    "first_blood_involvement enum unavailable in source rows; zero-filled with disclose per Section 1.",
+    "Match dates inside TI2026_Sim_Matches defaulted to matchday 2026-08-13 for group-stage predictions."
+   ],
+   "flags": []
+  },
+  "chatgpt": {
+   "meta": {
+    "source": "chatgpt",
+    "coverage": "champ 16 · fantasy 5"
+   },
+   "match_predictions": {},
+   "champion": [
+    {
+     "team": "Team Spirit",
+     "p_champion": 0.14
+    },
+    {
+     "team": "Team Falcons",
+     "p_champion": 0.12
+    },
+    {
+     "team": "Team Liquid",
+     "p_champion": 0.12
+    },
+    {
+     "team": "PARIVISION",
+     "p_champion": 0.1
+    },
+    {
+     "team": "BetBoom Team",
+     "p_champion": 0.1
+    },
+    {
+     "team": "Team Yandex",
+     "p_champion": 0.08
+    },
+    {
+     "team": "1w Team (ex-Tundra)",
+     "p_champion": 0.08
+    },
+    {
+     "team": "Aurora Gaming",
+     "p_champion": 0.06
+    },
+    {
+     "team": "LGD Gaming",
+     "p_champion": 0.05
+    },
+    {
+     "team": "Xtreme Gaming",
+     "p_champion": 0.04
+    },
+    {
+     "team": "Vici Gaming",
+     "p_champion": 0.03
+    },
+    {
+     "team": "OG",
+     "p_champion": 0.02
+    },
+    {
+     "team": "Nigma Galaxy",
+     "p_champion": 0.02
+    },
+    {
+     "team": "GamerLegion",
+     "p_champion": 0.01
+    },
+    {
+     "team": "HULIGANI",
+     "p_champion": 0.01
+    },
+    {
+     "team": "Team Resilience",
+     "p_champion": 0.01
+    }
+   ],
+   "fantasy": {
+    "players": [
+     {
+      "position": 1,
+      "player": "Satanic",
+      "team": "PARIVISION",
+      "expected_maps": 2.0,
+      "points_per_map": 4.8,
+      "predicted_fantasy_points": 9.6
+     },
+     {
+      "position": 2,
+      "player": "Nisha",
+      "team": "Team Liquid",
+      "expected_maps": 2.0,
+      "points_per_map": 4.7,
+      "predicted_fantasy_points": 9.4
+     },
+     {
+      "position": 3,
+      "player": "ATF",
+      "team": "Team Falcons",
+      "expected_maps": 2.0,
+      "points_per_map": 3.7,
+      "predicted_fantasy_points": 7.4
+     },
+     {
+      "position": 4,
+      "player": "Save-",
+      "team": "BetBoom Team",
+      "expected_maps": 2.0,
+      "points_per_map": 3.7,
+      "predicted_fantasy_points": 7.4
+     },
+     {
+      "position": 5,
+      "player": "tOfu",
+      "team": "Team Liquid",
+      "expected_maps": 2.0,
+      "points_per_map": 3.3,
+      "predicted_fantasy_points": 6.6
+     }
+    ],
+    "total": 40.4
+   },
+   "warnings": [
+    "The attached PLAYER_MATCH_STATS is a compact 80-player aggregate rather than the documented 11,960 per-map rows; player and fantasy calculations therefore use the supplied aggregates.",
+    "The attached DRAFT_DATA is aggregated by team and hero without map, date or patch fields, so patch-restricted draft scores are unavailable and were set to 0 without weight redistribution.",
+    "lane_outcome_score is absent; laning uses the documented lh_10 and net-worth fallback.",
+    "first_blood_involvement was absent and was zero-filled for fantasy scoring exactly as authorized.",
+    "towers_destroyed was unavailable and was omitted from fantasy point estimates; it was not interpreted as zero.",
+    "camps_stacked and roshan_kills are missing for many player summaries; unavailable components were omitted rather than fabricated, so fantasy totals are partial and confidence is low.",
+    "HULIGANI has zero team-level MAP_DATA rows; neutral map priors were used in all affected matchups despite player history for ssnovv1, Corrupted and RESPECT.",
+    "Team Resilience has zero team-level MAP_DATA rows; neutral map priors were used in all affected matchups.",
+    "Neutral player ratings with wide uncertainty were used for Topson, KJ, Mirage`, sayuw, YSR-04E, Echozz, niu and zzq.",
+    "Patch labels were matched as trimmed canonical strings, with 7.41 used as the supplied 7.41* scope.",
+    "All ten group-stage matches were assigned the documented matchday date 2026-08-13 because individual schedule dates were absent.",
+    "The playoff schedule is a single supplied bracket path rather than all possible group outcomes; champion simulation retains a 0.01 field/path residual.",
+    "Tundra Esports historical rows were mapped to 1w Team (ex-Tundra) under the supplied canonical alias rule.",
+    "Wildcard historical rows were mapped to GamerLegion only where the supplied roster identity rule supported the rebrand.",
+    "Several rounded playoff outcome distributions had a 0.01 residual allocated to the largest-probability outcome so each distribution sums exactly to 1.00."
+   ],
+   "flags": []
+  },
+  "hermes": {
+   "meta": {
+    "source": "hermes",
+    "coverage": "champ 8 · fantasy 5"
+   },
+   "match_predictions": {},
+   "champion": [
+    {
+     "team": "PARIVISION",
+     "p_champion": 0.067
+    },
+    {
+     "team": "Team Falcons",
+     "p_champion": 0.057
+    },
+    {
+     "team": "Aurora Gaming",
+     "p_champion": 0.056
+    },
+    {
+     "team": "Team Yandex",
+     "p_champion": 0.055
+    },
+    {
+     "team": "BetBoom Team",
+     "p_champion": 0.05
+    },
+    {
+     "team": "Team Liquid",
+     "p_champion": 0.049
+    },
+    {
+     "team": "Team Spirit",
+     "p_champion": 0.041
+    },
+    {
+     "team": "Natus Vincere",
+     "p_champion": 0.036
+    }
+   ],
+   "fantasy": {
+    "players": [
+     {
+      "position": 1,
+      "player": "Satanic",
+      "team": "PARIVISION",
+      "expected_maps": 4,
+      "points_per_map": 6.8,
+      "predicted_fantasy_points": 27.3
+     },
+     {
+      "position": 2,
+      "player": "Malr1ne",
+      "team": "Team Falcons",
+      "expected_maps": 4,
+      "points_per_map": 6.7,
+      "predicted_fantasy_points": 26.7
+     },
+     {
+      "position": 3,
+      "player": "ATF",
+      "team": "Team Falcons",
+      "expected_maps": 4,
+      "points_per_map": 5.9,
+      "predicted_fantasy_points": 23.6
+     },
+     {
+      "position": 4,
+      "player": "Save-",
+      "team": "BetBoom Team",
+      "expected_maps": 4,
+      "points_per_map": 6.0,
+      "predicted_fantasy_points": 23.9
+     },
+     {
+      "position": 5,
+      "player": "rue",
+      "team": "Team Spirit",
+      "expected_maps": 4,
+      "points_per_map": 5.3,
+      "predicted_fantasy_points": 21.1
+     }
+    ],
+    "total": 122.6
+   },
+   "warnings": [
+    "Computed deterministically by Hermes Agent per prompt v2.1 Sections 3-5 over the frozen v4 package.",
+    "HULIGANI and Team Resilience have zero team-level map history; neutral priors (R=1500, p≈0.5) used per R4.",
+    "Zero-history players (Topson, KJ, Mirage`, sayuw, YSR-04E, Echozz, niu, zzq) use rating 5.0 prior.",
+    "towers_destroyed and first_blood_involvement absent from source rows; fantasy terms set to 0 (disclosed).",
+    "lane_outcome_score absent; laning uses z(lh_10) approximation.",
+    "Patch labels coarse (7.41); draft factor uses 7.41 scope.",
+    "Champion prediction uses the rating_softmax fallback (prompt 4.2) because the supplied bracket is a single fixed path rather than a resolvable branching tree.",
+    "Fantasy matchday = all 10 group-stage matches (2026-08-13); teams playing twice get 4 expected maps.",
+    "Player fantasy PPG uses recency weight capped at last data date (2026-08-05)."
+   ],
+   "flags": []
+  },
+  "claude": {
+   "meta": {
+    "source": "claude",
+    "coverage": "champ 16 · fantasy 5"
+   },
+   "match_predictions": {},
+   "champion": [
+    {
+     "team": "PARIVISION",
+     "p_champion": 0.2205
+    },
+    {
+     "team": "Team Yandex",
+     "p_champion": 0.2141
+    },
+    {
+     "team": "Team Liquid",
+     "p_champion": 0.1283
+    },
+    {
+     "team": "Team Falcons",
+     "p_champion": 0.1067
+    },
+    {
+     "team": "BetBoom Team",
+     "p_champion": 0.101
+    },
+    {
+     "team": "Aurora Gaming",
+     "p_champion": 0.0991
+    },
+    {
+     "team": "Team Spirit",
+     "p_champion": 0.0935
+    },
+    {
+     "team": "LGD Gaming",
+     "p_champion": 0.0215
+    },
+    {
+     "team": "HULIGANI",
+     "p_champion": 0.0045
+    },
+    {
+     "team": "Team Resilience",
+     "p_champion": 0.0044
+    },
+    {
+     "team": "1w Team (ex-Tundra)",
+     "p_champion": 0.002
+    },
+    {
+     "team": "Vici Gaming",
+     "p_champion": 0.0017
+    },
+    {
+     "team": "Nigma Galaxy",
+     "p_champion": 0.0013
+    },
+    {
+     "team": "OG",
+     "p_champion": 0.0007
+    },
+    {
+     "team": "Xtreme Gaming",
+     "p_champion": 0.0007
+    },
+    {
+     "team": "GamerLegion",
+     "p_champion": 0.0001
+    }
+   ],
+   "fantasy": {
+    "players": [
+     {
+      "position": 1,
+      "player": "Satanic",
+      "team": "PARIVISION",
+      "expected_maps": 4,
+      "points_per_map": 6.03,
+      "predicted_fantasy_points": 24.1
+     },
+     {
+      "position": 2,
+      "player": "Malr1ne",
+      "team": "Team Falcons",
+      "expected_maps": 4,
+      "points_per_map": 5.76,
+      "predicted_fantasy_points": 23.0
+     },
+     {
+      "position": 3,
+      "player": "ATF",
+      "team": "Team Falcons",
+      "expected_maps": 4,
+      "points_per_map": 5.17,
+      "predicted_fantasy_points": 20.7
+     },
+     {
+      "position": 4,
+      "player": "Save-",
+      "team": "BetBoom Team",
+      "expected_maps": 4,
+      "points_per_map": 5.13,
+      "predicted_fantasy_points": 20.5
+     },
+     {
+      "position": 5,
+      "player": "rue",
+      "team": "Team Spirit",
+      "expected_maps": 4,
+      "points_per_map": 4.67,
+      "predicted_fantasy_points": 18.7
+     }
+    ],
+    "total": 107.0
+   },
+   "warnings": [
+    "Claude output extracted from its Forecast Desk HTML."
+   ],
+   "flags": []
+  }
+ },
+ "validation_report": {
+  "notes": [
+   "match-level winner odds moved to daily-predictions.json",
+   "champion odds (top-5+) and fantasy rosters retained here as pre-event snapshots"
+  ]
+ }
+}
