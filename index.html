@@ -222,13 +222,13 @@ function fmtP(x){ return x==null?'—':(Math.round(x*1000)/10)+'%'; }
 
 async function load(){
   const [d,s,en,fa,dy,sc,rs]=await Promise.all([
-    fetch('data/forecast-desk.json?v=20260814h').then(r=>r.json()),
-    fetch('data/schedule.json?v=20260814h').then(r=>r.json()),
-    fetch('i18n/en.json?v=20260814h').then(r=>r.json()),
-    fetch('i18n/fa.json?v=20260814h').then(r=>r.json()),
-    fetch('data/daily-predictions.json?v=20260814h').then(r=>r.json()).catch(()=>({matchdays:[]})),
-    fetch('data/model-scores.json?v=20260814h').then(r=>r.json()).catch(()=>({models:{}})),
-    fetch('data/results.json?v=20260814h').then(r=>r.json()).catch(()=>({results:[]})),
+    fetch('data/forecast-desk.json?v=20260814i').then(r=>r.json()),
+    fetch('data/schedule.json?v=20260814i').then(r=>r.json()),
+    fetch('i18n/en.json?v=20260814i').then(r=>r.json()),
+    fetch('i18n/fa.json?v=20260814i').then(r=>r.json()),
+    fetch('data/daily-predictions.json?v=20260814i').then(r=>r.json()).catch(()=>({matchdays:[]})),
+    fetch('data/model-scores.json?v=20260814i').then(r=>r.json()).catch(()=>({models:{}})),
+    fetch('data/results.json?v=20260814i').then(r=>r.json()).catch(()=>({results:[]})),
   ]);
   DATA=d; SCHED=s.schedule; ENCAT=en; FACAT=fa; DAILY=dy; SCORES=sc; RESULTS=rs;
   I18N = LANG==='fa'?FACAT:ENCAT;
@@ -382,46 +382,74 @@ function dailyPredsByMatch(){
   }
   return out;
 }
-function renderDays(){
+function cmpMatchCard(s){
+  const mid=s.match_id;
   const preds=dailyPredsByMatch();
   const resMap={}; for(const r of (RESULTS.results||[])) resMap[r.match_id]=r;
-  const anyPreds=Object.keys(preds).length>0;
-  const resultCell=s=>{
-    const r=resMap[s.match_id]||{status:s.status,winner:s.winner,score:s.score};
-    if(r.status==='completed'&&r.winner){
-      const cls=r.winner===s.team_a_name?'color:var(--radiant)':'color:var(--dire)';
-      return `<td class="cmp-num" style="${cls};font-weight:700">${r.winner} ${r.score?`(${r.score.winner_maps}-${r.score.loser_maps})`:''}</td>`;
-    }
-    if(r.status==='live') return `<td class="cmp-num" style="color:var(--amber)">● ${t('result.live')}</td>`;
-    return `<td class="cmp-num" style="color:var(--text-faint)">${t('result.pending')}</td>`;
-  };
-  const rowFor=s=>{
-    const cells=MODEL_ORDER.map(id=>{
-      const pa=preds[s.match_id]&&preds[s.match_id][id];
-      if(pa==null) return `<td class="c cmp-num" style="color:var(--text-faint)">—</td>`;
-      const hit= s.winner && ((pa>=0.5&&s.winner===s.team_a_name)||(pa<0.5&&s.winner===s.team_b_name));
-      return `<td class="c cmp-num" style="${hit?'color:var(--radiant);font-weight:700':''}">${Math.round(pa*100)}%</td>`;
-    }).join('');
-    const vals=MODEL_ORDER.map(id=>preds[s.match_id]&&preds[s.match_id][id]).filter(v=>v!=null);
-    const cons=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
-    return `<div class="cmp-row" style="grid-template-columns:150px 1fr ${MODEL_ORDER.map(()=>'1fr').join(' ')} 170px">
-      <div class="c-team">${s.match_id}<br><span style="color:var(--text)">${s.team_a_name}</span> vs <span style="color:var(--text)">${s.team_b_name}</span><br><span style="color:var(--text-faint);font-size:10.5px">${s.round}${s.pool?' · '+s.pool:''}</span></div>
-      <div class="cmp-num" style="color:var(--amber);font-weight:700">${cons==null?'—':Math.round(cons*100)+'%'}</div>
-      ${cells}${resultCell(s)}</div>`;
-  };
-  const head=`<div class="cmp-row head" style="grid-template-columns:150px 1fr ${MODEL_ORDER.map(()=>'1fr').join(' ')} 170px"><div>${t('cmp.match')}</div><div>${t('today.consensus')}</div>${MODEL_ORDER.map(m=>`<div class="c">${mName(m)}</div>`).join('')}<div>${t('today.result')}</div></div>`;
-  let daysHtml='';
+  const paFor=id=>preds[mid]&&preds[mid][id]!=null?preds[mid][id]:null;
+  const vals=MODEL_ORDER.map(paFor).filter(v=>v!=null);
+  const cons=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+  const r=resMap[mid];
+  let rCls='pending', rTxt=t('result.pending');
+  if(r&&r.status==='completed'&&r.winner){
+    rCls = r.winner===s.team_a_name?'win-a':'win-b';
+    rTxt = `${r.winner} ${r.score?`(${r.score.winner_maps}-${r.score.loser_maps})`:''}`;
+  } else if((r&&r.status==='live')||s.status==='live'){
+    rCls='live'; rTxt='● '+t('result.live');
+  }
+  let dRows='';
+  for(const id of MODEL_ORDER){
+    const pa=paFor(id);
+    if(pa==null){ dRows+=`<div class="cd-na">${mName(id)}: ${t('cmp.na')}</div>`; continue; }
+    const pb=1-pa;
+    const hit= (r&&r.winner) ? ((pa>=0.5&&r.winner===s.team_a_name)||(pa<0.5&&r.winner===s.team_b_name)) : null;
+    const hitHtml = hit==null ? '' : (hit?`<span class="cd-hit ok">✓</span>`:`<span class="cd-hit miss">✗</span>`);
+    const winName = pa>=0.5?s.team_a_name:s.team_b_name;
+    dRows+=`<div class="cd-row">
+      <div class="cd-model">${mName(id)}${hitHtml}</div>
+      <div class="cd-bar"><div class="cd-fill-a" style="width:${pa*100}%"></div><div class="cd-fill-b" style="width:${pb*100}%"></div></div>
+      <div class="cd-pct a">${Math.round(pa*100)}%</div>
+      <div class="cd-pct b">${Math.round(pb*100)}%</div>
+      <div class="cd-win">→ ${winName}</div></div>`;
+  }
+  return `<div class="cmp-match" data-mid="${mid}">
+    <div class="cmp-match-head">
+      <div class="cm-id">${mid}</div>
+      <div class="cm-format">BO${s.best_of}</div>
+      <div class="cm-duel">
+        <div class="cm-side a"><div class="cm-team">${s.team_a_name}</div><div class="cm-pct">${cons==null?'—':Math.round(cons*100)+'%'}</div></div>
+        <div class="cm-vs">vs</div>
+        <div class="cm-side b"><div class="cm-pct">${cons==null?'—':Math.round((1-cons)*100)+'%'}</div><div class="cm-team">${s.team_b_name}</div></div>
+      </div>
+      <div class="cm-consensus"><span class="lbl">${t('today.consensus')}</span><span class="val">${cons==null?'—':fmtP(cons)}</span></div>
+      <div class="cm-result ${rCls}">${rTxt}</div>
+      <div class="cm-chev">▾</div>
+    </div>
+    <div class="cmp-detail hidden">
+      <div class="cmp-detail-head"><div>${t('nav.models')}</div><div>${t('match.a_win')} / ${t('match.b_win')}</div><div>pA</div><div>pB</div><div>${t('today.result')}</div></div>
+      ${dRows}
+    </div>
+  </div>`;
+}
+function cmpDaysSections(){
+  let html='';
   for(let d=1; d<=4; d++){
     const ms=SCHED.filter(s=>s.day===d).sort((a,b)=>a.matchday_order-b.matchday_order);
+    if(!ms.length) continue;
     const dayStatus=ms.every(m=>m.status==='completed')?'✓':(ms.some(m=>m.status==='live')?'●':'');
-    daysHtml+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · BO2</span></div>
-      ${head}${ms.map(rowFor).join('')}</div>`;
+    html+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · BO2</span></div>
+      ${ms.map(cmpMatchCard).join('')}</div>`;
   }
+  return html;
+}
+function renderDays(){
+  const preds=dailyPredsByMatch();
+  const anyPreds=Object.keys(preds).length>0;
   $('#view').innerHTML=`
     <div class="eyebrow"><span class="dot"></span>${t('days.title')}</div>
     <h1>${t('days.title')}<span class="sub">${t('days.subtitle')}</span></h1>
     <div class="banner"><span class="pulse"></span><span>${anyPreds?t('status.pre'):t('today.pending_preds')}</span></div>
-    ${daysHtml}`;
+    ${cmpDaysSections()}`;
 }
 
 /* ---------- live accuracy chart ---------- */
@@ -471,68 +499,10 @@ function renderComparison(){
     fantRows+=`<div class="cmp-row"><div class="c-team">${mName(id)}</div><div class="cmp-num" style="text-align:start">${picks}${fr.total!=null?' — <b>'+fr.total+'</b>':''}</div></div>`;
   }
 
-  // match cards
-  function matchCardHTML(s){
-    const mid=s.match_id;
-    const paFor=id=>preds[mid]&&preds[mid][id]!=null?preds[mid][id]:null;
-    const vals=MODEL_ORDER.map(paFor).filter(v=>v!=null);
-    const cons=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
-    // result cell
-    const r=resMap[mid];
-    let rCls='pending', rTxt=t('result.pending');
-    if(r&&r.status==='completed'&&r.winner){
-      rCls = r.winner===s.team_a_name?'win-a':'win-b';
-      rTxt = `${r.winner} ${r.score?`(${r.score.winner_maps}-${r.score.loser_maps})`:''}`;
-    } else if(r&&r.status==='live' || s.status==='live'){
-      rCls='live'; rTxt='● '+t('result.live');
-    }
-    // detail rows
-    let dRows='';
-    for(const id of MODEL_ORDER){
-      const pa=paFor(id);
-      if(pa==null){
-        dRows+=`<div class="cd-na">${mName(id)}: ${t('cmp.na')}</div>`;
-        continue;
-      }
-      const pb=1-pa;
-      const hit= (r&&r.winner) ? ((pa>=0.5&&r.winner===s.team_a_name)||(pa<0.5&&r.winner===s.team_b_name)) : null;
-      const hitHtml = hit==null ? '' : (hit?`<span class="cd-hit ok">✓</span>`:`<span class="cd-hit miss">✗</span>`);
-      const winName = pa>=0.5?s.team_a_name:s.team_b_name;
-      dRows+=`<div class="cd-row">
-        <div class="cd-model">${mName(id)}${hitHtml}</div>
-        <div class="cd-bar"><div class="cd-fill-a" style="width:${pa*100}%"></div><div class="cd-fill-b" style="width:${pb*100}%"></div></div>
-        <div class="cd-pct a">${Math.round(pa*100)}%</div>
-        <div class="cd-pct b">${Math.round(pb*100)}%</div>
-        <div class="cd-win">→ ${winName}</div></div>`;
-    }
-    return `<div class="cmp-match" data-mid="${mid}">
-      <div class="cmp-match-head">
-        <div class="cm-id">${mid}</div>
-        <div class="cm-format">BO${s.best_of}</div>
-        <div class="cm-duel">
-          <div class="cm-side a"><div class="cm-team">${s.team_a_name}</div><div class="cm-pct">${cons==null?'—':Math.round(cons*100)+'%'}</div></div>
-          <div class="cm-vs">vs</div>
-          <div class="cm-side b"><div class="cm-pct">${cons==null?'—':Math.round((1-cons)*100)+'%'}</div><div class="cm-team">${s.team_b_name}</div></div>
-        </div>
-        <div class="cm-consensus"><span class="lbl">${t('today.consensus')}</span><span class="val">${cons==null?'—':fmtP(cons)}</span></div>
-        <div class="cm-result ${rCls}">${rTxt}</div>
-        <div class="cm-chev">▾</div>
-      </div>
-      <div class="cmp-detail hidden">
-        <div class="cmp-detail-head"><div>${t('nav.models')}</div><div>${t('match.a_win')} / ${t('match.b_win')}</div><div>pA</div><div>pB</div><div>${t('today.result')}</div></div>
-        ${dRows}
-      </div>
-    </div>`;
-  }
+  // match cards (shared card builder)
+  const matchCardHTML = cmpMatchCard;
 
-  let daysHtml='';
-  for(let d=1; d<=4; d++){
-    const ms=SCHED.filter(s=>s.day===d).sort((a,b)=>a.matchday_order-b.matchday_order);
-    if(!ms.length) continue;
-    const dayStatus=ms.every(m=>m.status==='completed')?'✓':(ms.some(m=>m.status==='live')?'●':'');
-    daysHtml+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · BO2</span></div>
-      ${ms.map(matchCardHTML).join('')}</div>`;
-  }
+  let daysHtml=cmpDaysSections();
 
   $('#view').innerHTML=`
     <div class="eyebrow"><span class="dot"></span>${t('cmp.title')}</div>
