@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "calculated_at": "2026-08-14",
+ "calculated_at": "2026-08-15",
  "per_match": {
   "gemini": [
    {
@@ -367,28 +367,28 @@
   "gemini": {
    "predictions_submitted": 8,
    "matches_scored": 8,
-   "coverage_percent": 33.3,
+   "coverage_percent": 20.5,
    "winner_accuracy_percent": 100.0,
    "brier_score": 0.082
   },
   "chatgpt": {
    "predictions_submitted": 8,
    "matches_scored": 8,
-   "coverage_percent": 33.3,
+   "coverage_percent": 20.5,
    "winner_accuracy_percent": 87.5,
    "brier_score": 0.1752
   },
   "hermes": {
    "predictions_submitted": 8,
    "matches_scored": 8,
-   "coverage_percent": 33.3,
+   "coverage_percent": 20.5,
    "winner_accuracy_percent": 100.0,
    "brier_score": 0.0958
   },
   "claude": {
    "predictions_submitted": 8,
    "matches_scored": 8,
-   "coverage_percent": 33.3,
+   "coverage_percent": 20.5,
    "winner_accuracy_percent": 100.0,
    "brier_score": 0.0664
   }

@@ -392,9 +392,12 @@
    "pool": "3-0",
    "team_a": "PARIVISION",
    "team_b": "Team Spirit",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "PARIVISION",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -405,9 +408,12 @@
    "pool": "2-1",
    "team_a": "1w Team (ex-Tundra)",
    "team_b": "Team Liquid",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "Team Liquid",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -418,9 +424,12 @@
    "pool": "2-1",
    "team_a": "BetBoom Team",
    "team_b": "Aurora Gaming",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "Aurora Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -431,9 +440,12 @@
    "pool": "2-1",
    "team_a": "Nigma Galaxy",
    "team_b": "Vici Gaming",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "Nigma Galaxy",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -444,9 +456,12 @@
    "pool": "1-2",
    "team_a": "LGD Gaming",
    "team_b": "Xtreme Gaming",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "LGD Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -457,9 +472,12 @@
    "pool": "1-2",
    "team_a": "Team Falcons",
    "team_b": "GamerLegion",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "Team Falcons",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -470,9 +488,12 @@
    "pool": "1-2",
    "team_a": "Team Resilience",
    "team_b": "Team Yandex",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "Team Yandex",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
@@ -483,12 +504,85 @@
    "pool": "0-3",
    "team_a": "OG",
    "team_b": "HULIGANI",
-   "status": "live",
-   "winner": null,
-   "score": null,
+   "status": "completed",
+   "winner": "OG",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
    "completed_at": null,
    "source": "liquipedia (user capture 2026-08-14)",
    "verified": true
+  },
+  {
+   "match_id": "TI2026-R5-01",
+   "status": "completed",
+   "winner": "Team Resilience",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "round": "R5"
+  },
+  {
+   "match_id": "TI2026-R5-02",
+   "status": "completed",
+   "winner": "GamerLegion",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "round": "R5"
+  },
+  {
+   "match_id": "TI2026-R5-03",
+   "status": "completed",
+   "winner": "LGD Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "round": "R5"
+  },
+  {
+   "match_id": "TI2026-R5-04",
+   "status": "completed",
+   "winner": "Team Falcons",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "round": "R5"
+  },
+  {
+   "match_id": "TI2026-R5-05",
+   "status": "completed",
+   "winner": "1w Team (ex-Tundra)",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "round": "R5"
+  },
+  {
+   "match_id": "TI2026-R5-06",
+   "status": "completed",
+   "winner": "Team Liquid",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "round": "R5"
+  },
+  {
+   "match_id": "TI2026-R5-07",
+   "status": "completed",
+   "winner": "Nigma Galaxy",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "round": "R5"
   }
  ]
 }

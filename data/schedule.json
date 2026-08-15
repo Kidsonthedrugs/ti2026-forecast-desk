@@ -499,10 +499,13 @@
    "team_b_id": "Team Spirit",
    "team_b_name": "Team Spirit",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "PARIVISION",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   },
   {
    "match_id": "TI2026-M26",
@@ -516,10 +519,13 @@
    "team_b_id": "Team Liquid",
    "team_b_name": "Team Liquid",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "Team Liquid",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   },
   {
    "match_id": "TI2026-M27",
@@ -533,10 +539,13 @@
    "team_b_id": "Aurora Gaming",
    "team_b_name": "Aurora Gaming",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "Aurora Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   },
   {
    "match_id": "TI2026-M28",
@@ -550,10 +559,13 @@
    "team_b_id": "Vici Gaming",
    "team_b_name": "Vici Gaming",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "Nigma Galaxy",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   },
   {
    "match_id": "TI2026-M29",
@@ -567,10 +579,13 @@
    "team_b_id": "Xtreme Gaming",
    "team_b_name": "Xtreme Gaming",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "LGD Gaming",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   },
   {
    "match_id": "TI2026-M30",
@@ -584,10 +599,13 @@
    "team_b_id": "GamerLegion",
    "team_b_name": "GamerLegion",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "Team Falcons",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   },
   {
    "match_id": "TI2026-M31",
@@ -601,10 +619,13 @@
    "team_b_id": "Team Yandex",
    "team_b_name": "Team Yandex",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "Team Yandex",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   },
   {
    "match_id": "TI2026-M32",
@@ -618,10 +639,13 @@
    "team_b_id": "HULIGANI",
    "team_b_name": "HULIGANI",
    "best_of": 2,
-   "status": "live",
+   "status": "completed",
    "source": "liquipedia (user capture 2026-08-14)",
-   "winner": null,
-   "score": null
+   "winner": "OG",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   }
  ]
 }
