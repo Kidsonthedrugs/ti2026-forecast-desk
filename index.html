@@ -433,7 +433,7 @@ function cmpMatchCard(s){
 }
 function cmpDaysSections(){
   let html='';
-  for(let d=1; d<=4; d++){
+  for(let d=1; d<=5; d++){
     const ms=SCHED.filter(s=>s.day===d).sort((a,b)=>a.matchday_order-b.matchday_order);
     if(!ms.length) continue;
     const dayStatus=ms.every(m=>m.status==='completed')?'✓':(ms.some(m=>m.status==='live')?'●':'');
