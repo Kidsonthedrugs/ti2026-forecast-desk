@@ -758,6 +758,61 @@
     "winner_maps": 2,
     "loser_maps": 0
    }
+  },
+  {
+   "match_id": "TI2026-ELIM-01",
+   "day": 6,
+   "round": "ELIM",
+   "pool": "3-2 vs 2-3",
+   "matchday_order": 1,
+   "best_of": 3,
+   "team_a_name": "Team Falcons",
+   "team_b_name": "Vici Gaming",
+   "status": "scheduled"
+  },
+  {
+   "match_id": "TI2026-ELIM-02",
+   "day": 6,
+   "round": "ELIM",
+   "pool": "3-2 vs 2-3",
+   "matchday_order": 2,
+   "best_of": 3,
+   "team_a_name": "Aurora Gaming",
+   "team_b_name": "BetBoom Team",
+   "status": "scheduled"
+  },
+  {
+   "match_id": "TI2026-ELIM-03",
+   "day": 6,
+   "round": "ELIM",
+   "pool": "3-2 vs 2-3",
+   "matchday_order": 3,
+   "best_of": 3,
+   "team_a_name": "Team Spirit",
+   "team_b_name": "Team Resilience",
+   "status": "scheduled"
+  },
+  {
+   "match_id": "TI2026-ELIM-04",
+   "day": 6,
+   "round": "ELIM",
+   "pool": "3-2 vs 2-3",
+   "matchday_order": 4,
+   "best_of": 3,
+   "team_a_name": "1w Team (ex-Tundra)",
+   "team_b_name": "GamerLegion",
+   "status": "scheduled"
+  },
+  {
+   "match_id": "TI2026-ELIM-05",
+   "day": 6,
+   "round": "ELIM",
+   "pool": "3-2 vs 2-3",
+   "matchday_order": 5,
+   "best_of": 3,
+   "team_a_name": "LGD Gaming",
+   "team_b_name": "Team Yandex",
+   "status": "scheduled"
   }
  ]
 }

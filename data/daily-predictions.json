@@ -1461,6 +1461,203 @@
      }
     }
    }
+  },
+  {
+   "matchday_id": "day-06",
+   "date": "2026-08-13",
+   "round": "ELIM",
+   "data_version": "v1.0.0",
+   "submitted_at": "2026-08-15T21:52:11",
+   "matches": [
+    {
+     "match_id": "TI2026-ELIM-01",
+     "team_a": "Team Falcons",
+     "team_b": "Vici Gaming",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-ELIM-02",
+     "team_a": "Aurora Gaming",
+     "team_b": "BetBoom Team",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-ELIM-03",
+     "team_a": "Team Spirit",
+     "team_b": "Team Resilience",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-ELIM-04",
+     "team_a": "1w Team (ex-Tundra)",
+     "team_b": "GamerLegion",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-ELIM-05",
+     "team_a": "LGD Gaming",
+     "team_b": "Team Yandex",
+     "best_of": 2
+    }
+   ],
+   "models": {
+    "gemini": {
+     "predictions": {
+      "TI2026-ELIM-01": {
+       "p_team_a_win": 0.79,
+       "p_team_b_win": 0.21,
+       "predicted_winner": "Team Falcons",
+       "confidence": 78,
+       "reasoning": "Falcons hold massive base rating and player composite advantages over Vici Gaming, whose only Swiss wins came against bottom-seeded opponents."
+      },
+      "TI2026-ELIM-02": {
+       "p_team_a_win": 0.61,
+       "p_team_b_win": 0.39,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 63,
+       "reasoning": "Aurora carry positive momentum and recent head-to-head dominance following their 2-0 sweep of BetBoom in Round 4."
+      },
+      "TI2026-ELIM-03": {
+       "p_team_a_win": 0.83,
+       "p_team_b_win": 0.17,
+       "predicted_winner": "Team Spirit",
+       "confidence": 82,
+       "reasoning": "Spirit possess overwhelming laning efficiency and baseline rating differentials against a Resilience squad that struggled against tier-one competition."
+      },
+      "TI2026-ELIM-04": {
+       "p_team_a_win": 0.77,
+       "p_team_b_win": 0.23,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 76,
+       "reasoning": "1w Team outclass GamerLegion across player composite metrics and strategic flexibility, demonstrated by consistent Swiss series victories over tier-one contenders."
+      },
+      "TI2026-ELIM-05": {
+       "p_team_a_win": 0.68,
+       "p_team_b_win": 0.32,
+       "predicted_winner": "LGD Gaming",
+       "confidence": 68,
+       "reasoning": "LGD demonstrate superior late-game execution and draft depth compared to Yandex, who consistently failed to convert map leads in deciding games."
+      }
+     }
+    },
+    "hermes": {
+     "predictions": {
+      "TI2026-ELIM-01": {
+       "p_team_a_win": 0.71,
+       "p_team_b_win": 0.29,
+       "predicted_winner": "Team Falcons",
+       "confidence": 71,
+       "reasoning": "Falcons have the higher base rating and player composite plus a deeper draft-meta pool, while Vici's 2-3 Swiss profile and lower schedule-adjusted win rate trail."
+      },
+      "TI2026-ELIM-02": {
+       "p_team_a_win": 0.58,
+       "p_team_b_win": 0.42,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 58,
+       "reasoning": "Aurora's better current player composite and head-to-head 2-0 Swiss win over BetBoom give a narrow edge, with BetBoom's PGL title keeping the margin modest."
+      },
+      "TI2026-ELIM-03": {
+       "p_team_a_win": 0.62,
+       "p_team_b_win": 0.38,
+       "predicted_winner": "Team Spirit",
+       "confidence": 62,
+       "reasoning": "Spirit's higher established roster ceiling and broader draft flexibility outweigh Resilience's small-sample Swiss overperformance."
+      },
+      "TI2026-ELIM-04": {
+       "p_team_a_win": 0.77,
+       "p_team_b_win": 0.23,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 77,
+       "reasoning": "1w's stronger base rating, player composite, and historical head-to-head advantage over GamerLegion make them the clear Bo3 favorite."
+      },
+      "TI2026-ELIM-05": {
+       "p_team_a_win": 0.59,
+       "p_team_b_win": 0.41,
+       "predicted_winner": "LGD Gaming",
+       "confidence": 59,
+       "reasoning": "LGD's recent Swiss form with Topson and wins over Vici/Xtreme slightly outweigh Yandex's BLAST VII head-to-head edge, yielding a close Bo3."
+      }
+     }
+    },
+    "chatgpt": {
+     "predictions": {
+      "TI2026-ELIM-01": {
+       "p_team_a_win": 0.68,
+       "p_team_b_win": 0.32,
+       "predicted_winner": "Team Falcons",
+       "confidence": 68,
+       "reasoning": "Base rating, player composite, and recent form favor Team Falcons; Vici Gaming's stronger recent map-level evidence keeps the coverage-adjusted Bo3 probability below a sweep-level favorite."
+      },
+      "TI2026-ELIM-02": {
+       "p_team_a_win": 0.56,
+       "p_team_b_win": 0.44,
+       "predicted_winner": "Aurora Gaming",
+       "confidence": 56,
+       "reasoning": "Aurora Gaming's recent 2-0 result over BetBoom Team supports the matchup, while BetBoom Team retains substantial base-rating and player-composite strength, producing a narrow Aurora edge."
+      },
+      "TI2026-ELIM-03": {
+       "p_team_a_win": 0.76,
+       "p_team_b_win": 0.24,
+       "predicted_winner": "Team Spirit",
+       "confidence": 76,
+       "reasoning": "Team Spirit leads the base, player, form, and draft factors with substantially deeper historical coverage; Team Resilience's recent upset form prevents the probability from reaching the upper bound."
+      },
+      "TI2026-ELIM-04": {
+       "p_team_a_win": 0.74,
+       "p_team_b_win": 0.26,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 74,
+       "reasoning": "1w Team (ex-Tundra) has the stronger base rating, player composite, draft profile, and recent high-quality results, while GamerLegion's competitive TI map record supplies meaningful uncertainty."
+      },
+      "TI2026-ELIM-05": {
+       "p_team_a_win": 0.62,
+       "p_team_b_win": 0.38,
+       "predicted_winner": "LGD Gaming",
+       "confidence": 62,
+       "reasoning": "LGD Gaming's recent wins over Vici Gaming and Xtreme Gaming improve its base and form factors, but Team Yandex's current-patch draft depth and proven season performance make this a moderate rather than decisive edge."
+      }
+     }
+    },
+    "claude": {
+     "predictions": {
+      "TI2026-ELIM-01": {
+       "p_team_a_win": 0.57,
+       "p_team_b_win": 0.43,
+       "predicted_winner": "Team Falcons",
+       "confidence": 64,
+       "reasoning": "Team Falcons favored primarily on base rating (S=0.09, p_map=0.55, coverage=1.00)."
+      },
+      "TI2026-ELIM-02": {
+       "p_team_a_win": 0.48,
+       "p_team_b_win": 0.52,
+       "predicted_winner": "BetBoom Team",
+       "confidence": 54,
+       "reasoning": "BetBoom Team favored primarily on draft/meta fit (S=-0.02, p_map=0.49, coverage=1.00)."
+      },
+      "TI2026-ELIM-03": {
+       "p_team_a_win": 0.63,
+       "p_team_b_win": 0.37,
+       "predicted_winner": "Team Spirit",
+       "confidence": 76,
+       "reasoning": "Team Spirit favored primarily on draft/meta fit (S=0.19, p_map=0.59, coverage=0.85)."
+      },
+      "TI2026-ELIM-04": {
+       "p_team_a_win": 0.66,
+       "p_team_b_win": 0.34,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 82,
+       "reasoning": "1w Team (ex-Tundra) favored primarily on base rating (S=0.20, p_map=0.61, coverage=1.00)."
+      },
+      "TI2026-ELIM-05": {
+       "p_team_a_win": 0.42,
+       "p_team_b_win": 0.58,
+       "predicted_winner": "Team Yandex",
+       "confidence": 66,
+       "reasoning": "Team Yandex favored primarily on base rating (S=-0.10, p_map=0.44, coverage=1.00)."
+      }
+     }
+    }
+   }
   }
  ]
 }
