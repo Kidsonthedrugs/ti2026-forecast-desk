@@ -646,6 +646,118 @@
     "winner_maps": 2,
     "loser_maps": 1
    }
+  },
+  {
+   "match_id": "TI2026-R5-01",
+   "day": 5,
+   "round": "R5",
+   "pool": "1-3",
+   "matchday_order": 1,
+   "best_of": 2,
+   "team_a_name": "Team Resilience",
+   "team_b_name": "Xtreme Gaming",
+   "winner": "Team Resilience",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
+  },
+  {
+   "match_id": "TI2026-R5-02",
+   "day": 5,
+   "round": "R5",
+   "pool": "1-3",
+   "matchday_order": 2,
+   "best_of": 2,
+   "team_a_name": "GamerLegion",
+   "team_b_name": "OG",
+   "winner": "GamerLegion",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
+  },
+  {
+   "match_id": "TI2026-R5-03",
+   "day": 5,
+   "round": "R5",
+   "pool": "2-2",
+   "matchday_order": 3,
+   "best_of": 2,
+   "team_a_name": "Vici Gaming",
+   "team_b_name": "LGD Gaming",
+   "winner": "LGD Gaming",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
+  },
+  {
+   "match_id": "TI2026-R5-04",
+   "day": 5,
+   "round": "R5",
+   "pool": "2-2",
+   "matchday_order": 4,
+   "best_of": 2,
+   "team_a_name": "Team Falcons",
+   "team_b_name": "BetBoom Team",
+   "winner": "Team Falcons",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
+  },
+  {
+   "match_id": "TI2026-R5-05",
+   "day": 5,
+   "round": "R5",
+   "pool": "2-2",
+   "matchday_order": 5,
+   "best_of": 2,
+   "team_a_name": "Team Yandex",
+   "team_b_name": "1w Team (ex-Tundra)",
+   "winner": "1w Team (ex-Tundra)",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
+  },
+  {
+   "match_id": "TI2026-R5-06",
+   "day": 5,
+   "round": "R5",
+   "pool": "3-1",
+   "matchday_order": 6,
+   "best_of": 2,
+   "team_a_name": "Aurora Gaming",
+   "team_b_name": "Team Liquid",
+   "winner": "Team Liquid",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
+  },
+  {
+   "match_id": "TI2026-R5-07",
+   "day": 5,
+   "round": "R5",
+   "pool": "3-1",
+   "matchday_order": 7,
+   "best_of": 2,
+   "team_a_name": "Nigma Galaxy",
+   "team_b_name": "Team Spirit",
+   "winner": "Nigma Galaxy",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   }
  ]
 }
