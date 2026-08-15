@@ -522,7 +522,12 @@
     "winner_maps": 2,
     "loser_maps": 0
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "Team Resilience",
+   "team_b": "Xtreme Gaming",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   },
   {
    "match_id": "TI2026-R5-02",
@@ -532,7 +537,12 @@
     "winner_maps": 2,
     "loser_maps": 0
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "GamerLegion",
+   "team_b": "OG",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   },
   {
    "match_id": "TI2026-R5-03",
@@ -542,7 +552,12 @@
     "winner_maps": 2,
     "loser_maps": 0
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "Vici Gaming",
+   "team_b": "LGD Gaming",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   },
   {
    "match_id": "TI2026-R5-04",
@@ -552,7 +567,12 @@
     "winner_maps": 2,
     "loser_maps": 1
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "Team Falcons",
+   "team_b": "BetBoom Team",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   },
   {
    "match_id": "TI2026-R5-05",
@@ -562,7 +582,12 @@
     "winner_maps": 2,
     "loser_maps": 1
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "Team Yandex",
+   "team_b": "1w Team (ex-Tundra)",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   },
   {
    "match_id": "TI2026-R5-06",
@@ -572,7 +597,12 @@
     "winner_maps": 2,
     "loser_maps": 1
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "Aurora Gaming",
+   "team_b": "Team Liquid",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   },
   {
    "match_id": "TI2026-R5-07",
@@ -582,7 +612,12 @@
     "winner_maps": 2,
     "loser_maps": 0
    },
-   "round": "R5"
+   "round": "R5",
+   "team_a": "Nigma Galaxy",
+   "team_b": "Team Spirit",
+   "source": "opendota (backfill 2026-08-15)",
+   "verified": true,
+   "completed_at": null
   }
  ]
 }

@@ -90,6 +90,94 @@
     "predicted_winner": "Team Yandex",
     "hit": 1,
     "brier": 0.0529
+   },
+   {
+    "match_id": "TI2026-M09",
+    "round": "R2",
+    "team_a": "PARIVISION",
+    "team_b": "Team Falcons",
+    "winner": "PARIVISION",
+    "p_team_a_win": 0.32,
+    "predicted_winner": "Team Falcons",
+    "hit": 0,
+    "brier": 0.4624
+   },
+   {
+    "match_id": "TI2026-M10",
+    "round": "R2",
+    "team_a": "BetBoom Team",
+    "team_b": "1w Team (ex-Tundra)",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.54,
+    "predicted_winner": "BetBoom Team",
+    "hit": 1,
+    "brier": 0.2116
+   },
+   {
+    "match_id": "TI2026-M11",
+    "round": "R2",
+    "team_a": "Team Spirit",
+    "team_b": "Aurora Gaming",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.67,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.1089
+   },
+   {
+    "match_id": "TI2026-M12",
+    "round": "R2",
+    "team_a": "Team Liquid",
+    "team_b": "Team Yandex",
+    "winner": "Team Liquid",
+    "p_team_a_win": 0.72,
+    "predicted_winner": "Team Liquid",
+    "hit": 1,
+    "brier": 0.0784
+   },
+   {
+    "match_id": "TI2026-M13",
+    "round": "R2",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Resilience",
+    "winner": "LGD Gaming",
+    "p_team_a_win": 0.64,
+    "predicted_winner": "LGD Gaming",
+    "hit": 1,
+    "brier": 0.1296
+   },
+   {
+    "match_id": "TI2026-M14",
+    "round": "R2",
+    "team_a": "Nigma Galaxy",
+    "team_b": "OG",
+    "winner": "Nigma Galaxy",
+    "p_team_a_win": 0.44,
+    "predicted_winner": "OG",
+    "hit": 0,
+    "brier": 0.3136
+   },
+   {
+    "match_id": "TI2026-M15",
+    "round": "R2",
+    "team_a": "GamerLegion",
+    "team_b": "Xtreme Gaming",
+    "winner": "GamerLegion",
+    "p_team_a_win": 0.29,
+    "predicted_winner": "Xtreme Gaming",
+    "hit": 0,
+    "brier": 0.5041
+   },
+   {
+    "match_id": "TI2026-M16",
+    "round": "R2",
+    "team_a": "Vici Gaming",
+    "team_b": "HULIGANI",
+    "winner": "Vici Gaming",
+    "p_team_a_win": 0.69,
+    "predicted_winner": "Vici Gaming",
+    "hit": 1,
+    "brier": 0.0961
    }
   ],
   "chatgpt": [
@@ -270,6 +358,94 @@
     "predicted_winner": "Team Yandex",
     "hit": 1,
     "brier": 0.0961
+   },
+   {
+    "match_id": "TI2026-M09",
+    "round": "R2",
+    "team_a": "PARIVISION",
+    "team_b": "Team Falcons",
+    "winner": "PARIVISION",
+    "p_team_a_win": 0.55,
+    "predicted_winner": "PARIVISION",
+    "hit": 1,
+    "brier": 0.2025
+   },
+   {
+    "match_id": "TI2026-M10",
+    "round": "R2",
+    "team_a": "BetBoom Team",
+    "team_b": "1w Team (ex-Tundra)",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.47,
+    "predicted_winner": "1w Team (ex-Tundra)",
+    "hit": 0,
+    "brier": 0.2809
+   },
+   {
+    "match_id": "TI2026-M11",
+    "round": "R2",
+    "team_a": "Team Spirit",
+    "team_b": "Aurora Gaming",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.62,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.1444
+   },
+   {
+    "match_id": "TI2026-M12",
+    "round": "R2",
+    "team_a": "Team Liquid",
+    "team_b": "Team Yandex",
+    "winner": "Team Liquid",
+    "p_team_a_win": 0.61,
+    "predicted_winner": "Team Liquid",
+    "hit": 1,
+    "brier": 0.1521
+   },
+   {
+    "match_id": "TI2026-M13",
+    "round": "R2",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Resilience",
+    "winner": "LGD Gaming",
+    "p_team_a_win": 0.72,
+    "predicted_winner": "LGD Gaming",
+    "hit": 1,
+    "brier": 0.0784
+   },
+   {
+    "match_id": "TI2026-M14",
+    "round": "R2",
+    "team_a": "Nigma Galaxy",
+    "team_b": "OG",
+    "winner": "Nigma Galaxy",
+    "p_team_a_win": 0.56,
+    "predicted_winner": "Nigma Galaxy",
+    "hit": 1,
+    "brier": 0.1936
+   },
+   {
+    "match_id": "TI2026-M15",
+    "round": "R2",
+    "team_a": "GamerLegion",
+    "team_b": "Xtreme Gaming",
+    "winner": "GamerLegion",
+    "p_team_a_win": 0.4,
+    "predicted_winner": "Xtreme Gaming",
+    "hit": 0,
+    "brier": 0.36
+   },
+   {
+    "match_id": "TI2026-M16",
+    "round": "R2",
+    "team_a": "Vici Gaming",
+    "team_b": "HULIGANI",
+    "winner": "Vici Gaming",
+    "p_team_a_win": 0.71,
+    "predicted_winner": "Vici Gaming",
+    "hit": 1,
+    "brier": 0.0841
    }
   ],
   "claude": [
@@ -360,16 +536,104 @@
     "predicted_winner": "Team Yandex",
     "hit": 1,
     "brier": 0.0225
+   },
+   {
+    "match_id": "TI2026-M09",
+    "round": "R2",
+    "team_a": "PARIVISION",
+    "team_b": "Team Falcons",
+    "winner": "PARIVISION",
+    "p_team_a_win": 0.51,
+    "predicted_winner": "PARIVISION",
+    "hit": 1,
+    "brier": 0.2401
+   },
+   {
+    "match_id": "TI2026-M10",
+    "round": "R2",
+    "team_a": "BetBoom Team",
+    "team_b": "1w Team (ex-Tundra)",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.47,
+    "predicted_winner": "1w Team (ex-Tundra)",
+    "hit": 0,
+    "brier": 0.2809
+   },
+   {
+    "match_id": "TI2026-M11",
+    "round": "R2",
+    "team_a": "Team Spirit",
+    "team_b": "Aurora Gaming",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.53,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.2209
+   },
+   {
+    "match_id": "TI2026-M12",
+    "round": "R2",
+    "team_a": "Team Liquid",
+    "team_b": "Team Yandex",
+    "winner": "Team Liquid",
+    "p_team_a_win": 0.56,
+    "predicted_winner": "Team Liquid",
+    "hit": 1,
+    "brier": 0.1936
+   },
+   {
+    "match_id": "TI2026-M13",
+    "round": "R2",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Resilience",
+    "winner": "LGD Gaming",
+    "p_team_a_win": 0.78,
+    "predicted_winner": "LGD Gaming",
+    "hit": 1,
+    "brier": 0.0484
+   },
+   {
+    "match_id": "TI2026-M14",
+    "round": "R2",
+    "team_a": "Nigma Galaxy",
+    "team_b": "OG",
+    "winner": "Nigma Galaxy",
+    "p_team_a_win": 0.47,
+    "predicted_winner": "OG",
+    "hit": 0,
+    "brier": 0.2809
+   },
+   {
+    "match_id": "TI2026-M15",
+    "round": "R2",
+    "team_a": "GamerLegion",
+    "team_b": "Xtreme Gaming",
+    "winner": "GamerLegion",
+    "p_team_a_win": 0.3,
+    "predicted_winner": "Xtreme Gaming",
+    "hit": 0,
+    "brier": 0.49
+   },
+   {
+    "match_id": "TI2026-M16",
+    "round": "R2",
+    "team_a": "Vici Gaming",
+    "team_b": "HULIGANI",
+    "winner": "Vici Gaming",
+    "p_team_a_win": 0.83,
+    "predicted_winner": "Vici Gaming",
+    "hit": 1,
+    "brier": 0.0289
    }
   ]
  },
  "models": {
   "gemini": {
-   "predictions_submitted": 8,
-   "matches_scored": 8,
-   "coverage_percent": 20.5,
-   "winner_accuracy_percent": 100.0,
-   "brier_score": 0.082
+   "predictions_submitted": 16,
+   "matches_scored": 16,
+   "coverage_percent": 41.0,
+   "winner_accuracy_percent": 81.25,
+   "brier_score": 0.1601
   },
   "chatgpt": {
    "predictions_submitted": 8,
@@ -379,18 +643,18 @@
    "brier_score": 0.1752
   },
   "hermes": {
-   "predictions_submitted": 8,
-   "matches_scored": 8,
-   "coverage_percent": 20.5,
-   "winner_accuracy_percent": 100.0,
-   "brier_score": 0.0958
+   "predictions_submitted": 16,
+   "matches_scored": 16,
+   "coverage_percent": 41.0,
+   "winner_accuracy_percent": 87.5,
+   "brier_score": 0.1414
   },
   "claude": {
-   "predictions_submitted": 8,
-   "matches_scored": 8,
-   "coverage_percent": 20.5,
-   "winner_accuracy_percent": 100.0,
-   "brier_score": 0.0664
+   "predictions_submitted": 16,
+   "matches_scored": 16,
+   "coverage_percent": 41.0,
+   "winner_accuracy_percent": 81.25,
+   "brier_score": 0.1447
   }
  },
  "daily": {
@@ -399,6 +663,11 @@
     "n": 8,
     "winner_accuracy_percent": 100.0,
     "brier_score": 0.082
+   },
+   "R2": {
+    "n": 8,
+    "winner_accuracy_percent": 62.5,
+    "brier_score": 0.2381
    }
   },
   "chatgpt": {
@@ -413,6 +682,11 @@
     "n": 8,
     "winner_accuracy_percent": 100.0,
     "brier_score": 0.0958
+   },
+   "R2": {
+    "n": 8,
+    "winner_accuracy_percent": 75.0,
+    "brier_score": 0.187
    }
   },
   "claude": {
@@ -420,6 +694,11 @@
     "n": 8,
     "winner_accuracy_percent": 100.0,
     "brier_score": 0.0664
+   },
+   "R2": {
+    "n": 8,
+    "winner_accuracy_percent": 62.5,
+    "brier_score": 0.223
    }
   }
  },
@@ -430,6 +709,12 @@
     "n": 8,
     "winner_accuracy_percent": 100.0,
     "brier_score": 0.082
+   },
+   {
+    "round": "R2",
+    "n": 16,
+    "winner_accuracy_percent": 81.25,
+    "brier_score": 0.1601
    }
   ],
   "chatgpt": [
@@ -446,6 +731,12 @@
     "n": 8,
     "winner_accuracy_percent": 100.0,
     "brier_score": 0.0958
+   },
+   {
+    "round": "R2",
+    "n": 16,
+    "winner_accuracy_percent": 87.5,
+    "brier_score": 0.1414
    }
   ],
   "claude": [
@@ -454,6 +745,12 @@
     "n": 8,
     "winner_accuracy_percent": 100.0,
     "brier_score": 0.0664
+   },
+   {
+    "round": "R2",
+    "n": 16,
+    "winner_accuracy_percent": 81.25,
+    "brier_score": 0.1447
    }
   ]
  }

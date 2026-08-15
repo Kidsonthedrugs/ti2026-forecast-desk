@@ -222,13 +222,13 @@ function fmtP(x){ return x==null?'—':(Math.round(x*1000)/10)+'%'; }
 
 async function load(){
   const [d,s,en,fa,dy,sc,rs]=await Promise.all([
-    fetch('data/forecast-desk.json?v=20260814i').then(r=>r.json()),
-    fetch('data/schedule.json?v=20260814i').then(r=>r.json()),
-    fetch('i18n/en.json?v=20260814i').then(r=>r.json()),
-    fetch('i18n/fa.json?v=20260814i').then(r=>r.json()),
-    fetch('data/daily-predictions.json?v=20260814i').then(r=>r.json()).catch(()=>({matchdays:[]})),
-    fetch('data/model-scores.json?v=20260814i').then(r=>r.json()).catch(()=>({models:{}})),
-    fetch('data/results.json?v=20260814i').then(r=>r.json()).catch(()=>({results:[]})),
+    fetch('data/forecast-desk.json?v=20260814j').then(r=>r.json()),
+    fetch('data/schedule.json?v=20260814j').then(r=>r.json()),
+    fetch('i18n/en.json?v=20260814j').then(r=>r.json()),
+    fetch('i18n/fa.json?v=20260814j').then(r=>r.json()),
+    fetch('data/daily-predictions.json?v=20260814j').then(r=>r.json()).catch(()=>({matchdays:[]})),
+    fetch('data/model-scores.json?v=20260814j').then(r=>r.json()).catch(()=>({models:{}})),
+    fetch('data/results.json?v=20260814j').then(r=>r.json()).catch(()=>({results:[]})),
   ]);
   DATA=d; SCHED=s.schedule; ENCAT=en; FACAT=fa; DAILY=dy; SCORES=sc; RESULTS=rs;
   I18N = LANG==='fa'?FACAT:ENCAT;
