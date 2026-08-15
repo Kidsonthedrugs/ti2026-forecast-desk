@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TI 2026 — Forecast Desk</title>
+<title>پیشگوگاه TI 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap');
 :root{
@@ -28,9 +28,6 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .nav a:hover{background:var(--bg-panel-2);color:var(--text);}
 .nav a.active{background:var(--bg-panel-2);color:var(--text);box-shadow:inset 3px 0 0 var(--amber);}
 .nav .group{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);padding:14px 12px 5px;}
-.lang-toggle{margin-top:22px;display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
-.lang-toggle button{flex:1;background:var(--bg-panel-2);border:none;color:var(--text-dim);padding:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;}
-.lang-toggle button.on{background:var(--amber);color:#111;}
 .foot-note{position:absolute;bottom:18px;inset-inline:16px;font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
 
 .main{flex:1;min-width:0;padding:34px 34px 90px;max-width:1180px;margin:0 auto;width:100%;}
@@ -127,12 +124,6 @@ html[lang="fa"] h1{font-family:'Vazirmatn',sans-serif;text-transform:none;}
 .roster-total .rt-val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:24px;color:var(--radiant);}
 .empty-fantasy{padding:16px;color:var(--text-faint);font-size:13px;background:var(--bg-panel);border:1px dashed var(--line);border-radius:8px;}
 
-/* warnings */
-.caveats{background:var(--bg-panel);border:1px solid var(--amber-dim);border-radius:8px;padding:20px 24px;}
-.caveats h3{font-family:'Oswald',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--amber);margin-bottom:12px;}
-.caveats ol{padding-inline-start:20px;display:flex;flex-direction:column;gap:8px;}
-.caveats li{font-size:12.5px;color:var(--text-dim);}
-
 /* comparison */
 .cmp-select{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
 .cmp-select select,.cmp-select button{background:var(--bg-panel-2);border:1px solid var(--line);color:var(--text);border-radius:6px;padding:9px 12px;font-size:13px;font-family:inherit;}
@@ -152,16 +143,17 @@ html[lang="fa"] h1{font-family:'Vazirmatn',sans-serif;text-transform:none;}
 .cmp-match{background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .15s ease;cursor:pointer;}
 .cmp-match:hover{border-color:#2E3646;}
 .cmp-match.open{border-color:var(--amber-dim);}
-.cmp-match-head{display:grid;grid-template-columns:74px 40px 1fr auto 24px;align-items:center;gap:12px;padding:14px 18px;}
-.cm-id{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);}
-.cm-format{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-dim);background:var(--bg-panel-2);border:1px solid var(--line);padding:2px 6px;border-radius:4px;text-align:center;}
-.cm-duel{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;}
-.cm-side{display:flex;align-items:center;gap:10px;min-width:0;}
-.cm-side.b{flex-direction:row-reverse;}
-.cm-team{font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cmp-match-head{display:grid;grid-template-columns:74px 40px minmax(0,1fr) auto 24px;align-items:center;gap:12px;padding:14px 18px;}
+.cm-id{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);white-space:nowrap;}
+.cm-format{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-dim);background:var(--bg-panel-2);border:1px solid var(--line);padding:2px 6px;border-radius:4px;text-align:center;white-space:nowrap;}
+.cm-duel{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;min-width:0;}
+.cm-side{display:flex;align-items:center;gap:8px;min-width:0;}
+.cm-side.a{justify-content:flex-start;}
+.cm-side.b{justify-content:flex-end;}
+.cm-team{font-family:'Oswald',sans-serif;font-weight:600;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
 .cm-side.a .cm-team{color:var(--radiant);}
 .cm-side.b .cm-team{color:var(--dire);}
-.cm-pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;}
+.cm-pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14.5px;flex-shrink:0;}
 .cm-side.a .cm-pct{color:var(--radiant);}
 .cm-side.b .cm-pct{color:var(--dire);}
 .cm-vs{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-faint);flex-shrink:0;}
@@ -191,6 +183,8 @@ html[lang="fa"] h1{font-family:'Vazirmatn',sans-serif;text-transform:none;}
 .cd-pct.b{color:var(--dire);}
 .cd-win{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-dim);text-align:end;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .cd-na{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);padding:9px 8px;border-top:1px solid var(--line-soft);}
+.cmp-champ-chip{display:inline-block;border:1px solid;border-radius:4px;padding:1px 8px;margin:1px 2px;font-size:11.5px;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+.cmp-fant-total{color:var(--radiant);font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;margin-inline-start:8px;}
 
 footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 ::selection{background:var(--radiant-dim);color:var(--text);}
@@ -201,46 +195,41 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <body>
 <div class="app">
   <aside class="sidebar">
-    <div class="brand">Forecast<span>Desk</span></div>
-    <div class="brand-sub">TI 2026 · 4 models</div>
+    <div class="brand">پیشگوگاه <span>TI 2026</span></div>
+    <div class="brand-sub">4 AI · 9 tournaments</div>
     <nav class="nav" id="nav"></nav>
-    <div class="lang-toggle" id="lang-toggle"></div>
-    <div class="foot-note">v1.0.0 · pre-event</div>
+    <div class="foot-note">v2.0.0 · pre-event</div>
   </aside>
   <main class="main" id="view"></main>
 </div>
 <script>
 const $ = s => document.querySelector(s);
-let DATA=null, SCHED=null, I18N={}, LANG = localStorage.getItem('fd-lang') || 'en';
-let ENCAT={}, FACAT={}, DAILY={}, SCORES={}, RESULTS={matchdays:[],results:[]};
+let DATA=null, SCHED=null, I18N={};
+let FACAT={}, DAILY={}, SCORES={}, RESULTS={matchdays:[],results:[]};
 const MODEL_ORDER=['claude','gemini','chatgpt','hermes'];
 const MODEL_NAMES={claude:'Claude',gemini:'Gemini',chatgpt:'ChatGPT',hermes:'DeepSeek'};
 const mName=id=>MODEL_NAMES[id]||id;
+const ROLES={1:'fantasy.carry',2:'fantasy.mid',3:'fantasy.offlane',4:'fantasy.support',5:'fantasy.hard'};
 
 function t(k){ return I18N[k] || k; }
 function fmtP(x){ return x==null?'—':(Math.round(x*1000)/10)+'%'; }
 
 async function load(){
-  const [d,s,en,fa,dy,sc,rs]=await Promise.all([
+  const [d,s,fa,dy,sc,rs]=await Promise.all([
     fetch('data/forecast-desk.json?v=20260814l').then(r=>r.json()),
     fetch('data/schedule.json?v=20260814l').then(r=>r.json()),
-    fetch('i18n/en.json?v=20260814l').then(r=>r.json()),
     fetch('i18n/fa.json?v=20260814l').then(r=>r.json()),
     fetch('data/daily-predictions.json?v=20260814l').then(r=>r.json()).catch(()=>({matchdays:[]})),
     fetch('data/model-scores.json?v=20260814l').then(r=>r.json()).catch(()=>({models:{}})),
     fetch('data/results.json?v=20260814l').then(r=>r.json()).catch(()=>({results:[]})),
   ]);
-  DATA=d; SCHED=s.schedule; ENCAT=en; FACAT=fa; DAILY=dy; SCORES=sc; RESULTS=rs;
-  I18N = LANG==='fa'?FACAT:ENCAT;
-  applyLang(); buildNav(); route();
-}
-function applyLang(){
-  document.documentElement.lang=LANG;
-  document.documentElement.dir = LANG==='fa'?'rtl':'ltr';
+  DATA=d; SCHED=s.schedule; FACAT=fa; DAILY=dy; SCORES=sc; RESULTS=rs;
+  I18N = FACAT;
+  document.documentElement.lang='fa';
+  document.documentElement.dir='rtl';
   document.title = t('app.title');
-  $('#lang-toggle').innerHTML = `<button class="${LANG==='en'?'on':''}" onclick="setLang('en')">EN</button><button class="${LANG==='fa'?'on':''}" onclick="setLang('fa')">فارسی</button>`;
+  buildNav(); route();
 }
-function setLang(l){ LANG=l; localStorage.setItem('fd-lang',l); I18N = LANG==='fa'?FACAT:ENCAT; applyLang(); buildNav(); route(); }
 function buildNav(){
   const groups=[['',t('nav.overview')],['today',t('nav.today')],['comparison',t('nav.comparison')]];
   let h='';
@@ -280,7 +269,9 @@ function overviewChampFantasy(){
 }
 function renderOverview(){
   const meta=DATA.event;
-  const zeroHist=['HULIGANI','Team Resilience'];
+  const nRounds = SCHED.length;                       // 44 (32 swiss + 7 R5 + 5 elim)
+  const nBase = 1196, nExtra = 97;                    // 9-tournament maps + TI2026 R1-R5 maps
+  const nTourn = 9;
   let cards='';
   for(const id of MODEL_ORDER){
     const m=DATA.models[id];
@@ -291,17 +282,17 @@ function renderOverview(){
       <div class="c-meta"><span>${t('overview.coverage')}: <b>${m.meta.coverage}</b></span>
       <span>${t('overview.champ')}: <b>${champ}</b></span>
       <span>${t('overview.fantasy')}: <b>${ft}</b></span></div>
-      <div class="c-go">${t('overview.open')} →</div></a>`;
+      <div class="c-go">${t('overview.open')} ←</div></a>`;
   }
   $('#view').innerHTML=`
     <div class="eyebrow"><span class="dot"></span>${t('app.title')}</div>
     <h1>${t('app.title')}<span class="sub">${t('app.tagline')}</span></h1>
     <div class="hero-meta">
-      <div><div class="m-label">${t('meta.as_of')}</div><div class="m-val mono">2026-08-13</div></div>
-      <div><div class="m-label">${t('meta.maps')}</div><div class="m-val mono">1,196</div></div>
-      <div><div class="m-label">${t('meta.half_life')}</div><div class="m-val mono">120d</div></div>
-      <div><div class="m-label">${t('meta.coverage')}</div><div class="m-val mono">4 × 32/32</div></div>
-      <div><div class="m-label">${t('meta.zero_history')}</div><div class="m-val warn mono">${zeroHist.join(' · ')}</div></div>
+      <div><div class="m-label">${t('meta.matches')}</div><div class="m-val mono">${(nBase+nExtra).toLocaleString('en-US')}</div></div>
+      <div><div class="m-label">${t('meta.factors')}</div><div class="m-val mono">6</div></div>
+      <div><div class="m-label">${t('meta.tournaments')}</div><div class="m-val mono">${nTourn}</div></div>
+      <div><div class="m-label">${t('meta.models')}</div><div class="m-val mono">4</div></div>
+      <div><div class="m-label">${t('meta.as_of')}</div><div class="m-val mono">2026-08-16</div></div>
     </div>
     <div class="banner"><span class="pulse"></span><span>${t('status.pre')} — ${t('overview.subtitle')}</span></div>
     <div class="section"><div class="section-head"><h2>${t('nav.models')}</h2></div><div class="cards">${cards}</div></div>
@@ -343,30 +334,29 @@ function renderModel(id){
   const m=DATA.models[id];
   const champ=m.champion||[];
   const maxP=Math.max(...champ.map(c=>c.p_champion||0),0.001);
-  const champHtml=champ.map((c,i)=>{
+  const RANK_COLORS=['#F2A93B','#C0C8D8','#B8865B','#3ECF8E','#7FB4E8'];
+  const champHtml=champ.slice(0,5).map((c,i)=>{
     const tier=c.p_champion>=0.05?'':(c.p_champion>=0.01?'tier1':'tier3');
-    return `<div class="champ-row ${tier}"><div class="champ-rank mono">${String(i+1).padStart(2,'0')}</div>
+    return `<div class="champ-row ${tier}"><div class="champ-rank mono" style="color:${RANK_COLORS[i]||'var(--text-faint)'}">${String(i+1).padStart(2,'0')}</div>
     <div class="champ-team">${c.team}</div><div class="champ-bar-track"><div class="champ-bar-fill" style="width:${Math.max((c.p_champion||0)/maxP*100,1.5)}%"></div></div>
     <div class="champ-pct">${fmtP(c.p_champion)}</div></div>`;
   }).join('');
   const fr=m.fantasy;
   const fantHtml=(fr.players&&fr.players.length)?fr.players.map(p=>`
-    <div class="player-card" data-pos="${p.position}"><div class="pc-pos">${t('fantasy.pos')} ${p.position}</div>
+    <div class="player-card" data-pos="${p.position}"><div class="pc-pos">${t(ROLES[p.position]||'fantasy.role')}</div>
     <div class="pc-name">${p.player}</div><div class="pc-team">${p.team}</div>
     <div class="pc-stat-row"><span>${t('fantasy.ppg')}</span><b>${p.points_per_map!=null?p.points_per_map:'—'}</b></div>
     <div class="pc-stat-row"><span>${t('fantasy.ep')}</span><b>${p.expected_maps!=null?p.expected_maps:'—'}</b></div>
     <div class="pc-ep"><span class="pc-ep-label">${t('fantasy.ep')}</span><span class="pc-ep-val">${p.predicted_fantasy_points!=null?p.predicted_fantasy_points:'—'}</span></div></div>`).join('')
     :`<div class="empty-fantasy">${t('warn.no_fantasy')}</div>`;
-  const warns=(m.warnings||[]).map(w=>`<li>${w}</li>`).join('');
   $('#view').innerHTML=`
     <div class="eyebrow"><span class="dot"></span>${t('nav.models')} · ${mName(id)}</div>
     <h1>${mName(id)}<span class="sub">${t('model.method')}: ${m.champion&&m.champion.length?m.champion[0].team:'—'}</span></h1>
-    <div class="banner"><span class="pulse"></span><span>${t('status.pre')} — ${t('model.draw_note')}</span></div>
-    <div class="section"><div class="section-head"><span class="stage-tag">MC</span><h2>${t('model.champion')}</h2><span class="section-note">${champ.length} · ${t('champ.top3')}</span></div><div class="champ-panel">${champHtml}</div></div>
+    <div class="banner"><span class="pulse"></span><span>${t('status.pre')}</span></div>
+    <div class="section"><div class="section-head"><span class="stage-tag">MC</span><h2>${t('model.champion')}</h2><span class="section-note">${t('champ.top5')}</span></div><div class="champ-panel">${champHtml}</div></div>
     <div class="section"><div class="section-head"><span class="stage-tag">Matchday</span><h2>${t('model.fantasy')}</h2></div>
     <div class="roster-grid">${fantHtml}</div>
-    ${fr.total!=null?`<div class="roster-total"><div class="rt-label">${t('model.fantasy_total')}</div><div class="rt-val">${fr.total}</div></div>`:''}</div>
-    ${warns?`<div class="section"><div class="caveats"><h3>⚠ ${t('model.warnings')}</h3><ol>${warns}</ol></div></div>`:''}`;
+    ${fr.total!=null?`<div class="roster-total"><div class="rt-label">${t('model.fantasy_total')}</div><div class="rt-val">${fr.total}</div></div>`:''}</div>`;
 }
 
 /* ---------- today ---------- */
@@ -437,7 +427,8 @@ function cmpDaysSections(){
     const ms=SCHED.filter(s=>s.day===d).sort((a,b)=>a.matchday_order-b.matchday_order);
     if(!ms.length) continue;
     const dayStatus=ms.every(m=>m.status==='completed')?'✓':(ms.some(m=>m.status==='live')?'●':'');
-    html+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · BO2</span></div>
+    const bo = ms.every(m=>m.best_of===3) ? 'BO3' : (ms.every(m=>m.best_of===2) ? 'BO2' : 'BO2/BO3');
+    html+=`<div class="section"><div class="section-head"><span class="stage-tag">${dayStatus}</span><h2>${t('days.day')} ${d} <span style="color:var(--text-faint);font-size:13px;font-weight:400">(${ms[0].round})</span></h2><span class="section-note">${ms.length} · ${bo}</span></div>
       ${ms.map(cmpMatchCard).join('')}</div>`;
   }
   return html;
@@ -461,47 +452,55 @@ function accuracyChart(){
       <div class="banner"><span class="pulse"></span><span>${t('chart.empty')}</span></div></div>`;
   }
   const cum=SCORES.cumulative||{};
-  let rows='';
-  for(const id of have){
+  // sort descending by cumulative accuracy; tie-break: more scored, then name
+  const rows=have.map(id=>{
     const m=models[id];
     const c=cum[id]||[];
     const last=c.length?c[c.length-1]:null;
     const acc=last?last.winner_accuracy_percent:null;
     const brier=last?last.brier_score:null;
-    const roundDots=(c||[]).map(x=>`<span title="R${x.round}: ${x.winner_accuracy_percent}% (N=${x.n})" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-inline-end:3px;opacity:${0.5+x.n/40}"></span>`).join('');
-    rows+=`<div class="cmp-row" style="grid-template-columns:150px 1fr 90px 110px 120px">
-      <div class="c-team"><b>${mName(id)}</b></div>
-      <div class="cmp-bar" style="height:18px"><div class="fill" style="width:${acc==null?0:acc}%"></div></div>
-      <div class="cmp-num" style="font-weight:700;color:var(--radiant)">${acc==null?'—':acc.toFixed(1)+'%'}</div>
-      <div class="cmp-num">${brier==null?'—':brier.toFixed(4)}</div>
+    return {id, acc, brier, n:m.matches_scored||0};
+  }).sort((a,b)=> (b.acc??-1)-(a.acc??-1) || (b.n-a.n) || a.id.localeCompare(b.id));
+  let html='';
+  rows.forEach((r,i)=>{
+    const roundDots=((cum[r.id])||[]).map(x=>`<span title="R${x.round}: ${x.winner_accuracy_percent}% (N=${x.n})" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-inline-end:3px;opacity:${0.5+x.n/40}"></span>`).join('');
+    const medal=i===0?'#F2A93B':(i===1?'#C0C8D8':(i===2?'#B8865B':'var(--text-faint)'));
+    html+=`<div class="cmp-row" style="grid-template-columns:40px 150px 1fr 90px 110px 120px">
+      <div class="cmp-num" style="font-family:'JetBrains Mono',monospace;font-weight:700;color:${medal}">${i+1}</div>
+      <div class="c-team"><b>${mName(r.id)}</b></div>
+      <div class="cmp-bar" style="height:18px"><div class="fill" style="width:${r.acc==null?0:r.acc}%"></div></div>
+      <div class="cmp-num" style="font-weight:700;color:var(--radiant)">${r.acc==null?'—':r.acc.toFixed(1)+'%'}</div>
+      <div class="cmp-num">${r.brier==null?'—':r.brier.toFixed(4)}</div>
       <div class="cmp-num">${roundDots}</div></div>`;
-  }
+  });
   return `<div class="section"><div class="section-head"><span class="stage-tag" style="background:var(--amber)">LIVE</span><h2>${t('chart.title')}</h2><span class="section-note">${t('chart.cumulative')} · ${t('chart.lower_better')}</span></div>
-    <div class="champ-panel"><div class="cmp-row head" style="grid-template-columns:150px 1fr 90px 110px 120px"><div>${t('nav.models')}</div><div>${t('chart.accuracy')}</div><div>%</div><div>${t('chart.brier')}</div><div>${t('chart.daily')}</div></div>${rows}</div></div>`;
+    <div class="champ-panel"><div class="cmp-row head" style="grid-template-columns:40px 150px 1fr 90px 110px 120px"><div>#</div><div>${t('nav.models')}</div><div>${t('chart.accuracy')}</div><div>%</div><div>${t('chart.brier')}</div><div>${t('chart.daily')}</div></div>${html}</div></div>`;
 }
 function renderComparison(){
-  // champion + fantasy comparison (kept above), then clickable match cards per day.
   const preds=dailyPredsByMatch();  // {match_id: {model: pA}}
   const resMap={}; for(const r of (RESULTS.results||[])) resMap[r.match_id]=r;
 
+  // ---- Champion Odds: top-5 per model, rank column, color-coded ----
+  const RANK_COLORS=['#F2A93B','#C0C8D8','#B8865B','#3ECF8E','#7FB4E8'];
   let champRows='';
-  const champTeams={};
   for(const id of MODEL_ORDER){
     const c=DATA.models[id].champion||[];
-    champTeams[id]=c.length?c[0].team:'—';
+    const top5=c.slice(0,5);
+    const teamCells=top5.length?top5.map((t,i)=>`<span class="cmp-champ-chip" style="border-color:${RANK_COLORS[i]}44;color:${RANK_COLORS[i]}">${i+1}. ${t.team} ${fmtP(t.p_champion)}</span>`).join(''):'—';
+    champRows+=`<div class="cmp-row"><div class="c-team"><b>${mName(id)}</b></div><div class="cmp-num" style="text-align:start">${teamCells}</div></div>`;
   }
-  champRows=MODEL_ORDER.map(id=>`<div class="cmp-row"><div class="c-team">${mName(id)}</div><div class="cmp-num" style="text-align:start">${champTeams[id]}</div></div>`).join('');
 
+  // ---- Fantasy Rosters: role names + divider + projected total ----
   let fantRows='';
   for(const id of MODEL_ORDER){
     const fr=DATA.models[id].fantasy;
-    const picks=(fr.players||[]).map(p=>`P${p.position}:${p.player}`).join(' · ')||t('warn.no_fantasy');
-    fantRows+=`<div class="cmp-row"><div class="c-team">${mName(id)}</div><div class="cmp-num" style="text-align:start">${picks}${fr.total!=null?' — <b>'+fr.total+'</b>':''}</div></div>`;
+    const picks=(fr.players||[]).map(p=>`${t(ROLES[p.position]||'fantasy.role')}: <b>${p.player}</b>`).join(' · ')||t('warn.no_fantasy');
+    const total=fr.total!=null?`<span class="cmp-fant-total">≈ ${fr.total} ${t('fantasy.ep')}</span>`:'';
+    fantRows+=`<div class="cmp-row"><div class="c-team"><b>${mName(id)}</b></div><div class="cmp-num" style="text-align:start">${picks} ${total}</div></div>`;
   }
 
-  // match cards (shared card builder)
+  // ---- match cards (shared card builder) ----
   const matchCardHTML = cmpMatchCard;
-
   let daysHtml=cmpDaysSections();
 
   $('#view').innerHTML=`
@@ -509,7 +508,7 @@ function renderComparison(){
     <h1>${t('cmp.title')}<span class="sub">${t('cmp.subtitle')}</span></h1>
     <div class="banner"><span class="pulse"></span><span>${t('cmp.hint')}</span></div>
     ${daysHtml}
-    <div class="section"><div class="section-head"><h2>${t('cmp.champion')}</h2><span class="section-note">${t('champ.top3')} · ${t('cmp.top3_note')}</span></div><div class="champ-panel">${champRows}</div></div>
+    <div class="section"><div class="section-head"><h2>${t('cmp.champion')}</h2><span class="section-note">${t('champ.top5')} · ${t('cmp.top5_note')}</span></div><div class="champ-panel">${champRows}</div></div>
     <div class="section"><div class="section-head"><h2>${t('cmp.fantasy')}</h2></div><div class="champ-panel">${fantRows}</div></div>`;
 }
 function toggleMatch(mid){
