@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>پیشگوگاه TI 2026</title>
+<title>TI Oracle</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap');
 :root{
@@ -195,7 +195,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <body>
 <div class="app">
   <aside class="sidebar">
-    <div class="brand">پیشگوگاه <span>TI 2026</span></div>
+    <div class="brand">TI <span>Oracle</span></div>
     <div class="brand-sub">4 AI · 9 tournaments</div>
     <nav class="nav" id="nav"></nav>
     <div class="foot-note">v2.0.0 · pre-event</div>
@@ -205,7 +205,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <script>
 const $ = s => document.querySelector(s);
 let DATA=null, SCHED=null, I18N={};
-let FACAT={}, DAILY={}, SCORES={}, RESULTS={matchdays:[],results:[]};
+let DAILY={}, SCORES={}, RESULTS={matchdays:[],results:[]};
 const MODEL_ORDER=['claude','gemini','chatgpt','hermes'];
 const MODEL_NAMES={claude:'Claude',gemini:'Gemini',chatgpt:'ChatGPT',hermes:'DeepSeek'};
 const mName=id=>MODEL_NAMES[id]||id;
@@ -215,18 +215,17 @@ function t(k){ return I18N[k] || k; }
 function fmtP(x){ return x==null?'—':(Math.round(x*1000)/10)+'%'; }
 
 async function load(){
-  const [d,s,fa,dy,sc,rs]=await Promise.all([
+  const [d,s,en,dy,sc,rs]=await Promise.all([
     fetch('data/forecast-desk.json?v=20260814l').then(r=>r.json()),
     fetch('data/schedule.json?v=20260814l').then(r=>r.json()),
-    fetch('i18n/fa.json?v=20260814l').then(r=>r.json()),
+    fetch('i18n/en.json?v=20260814l').then(r=>r.json()),
     fetch('data/daily-predictions.json?v=20260814l').then(r=>r.json()).catch(()=>({matchdays:[]})),
     fetch('data/model-scores.json?v=20260814l').then(r=>r.json()).catch(()=>({models:{}})),
     fetch('data/results.json?v=20260814l').then(r=>r.json()).catch(()=>({results:[]})),
   ]);
-  DATA=d; SCHED=s.schedule; FACAT=fa; DAILY=dy; SCORES=sc; RESULTS=rs;
-  I18N = FACAT;
-  document.documentElement.lang='fa';
-  document.documentElement.dir='rtl';
+  DATA=d; SCHED=s.schedule; I18N=en; DAILY=dy; SCORES=sc; RESULTS=rs;
+  document.documentElement.lang='en';
+  document.documentElement.dir='ltr';
   document.title = t('app.title');
   buildNav(); route();
 }
@@ -282,7 +281,7 @@ function renderOverview(){
       <div class="c-meta"><span>${t('overview.coverage')}: <b>${m.meta.coverage}</b></span>
       <span>${t('overview.champ')}: <b>${champ}</b></span>
       <span>${t('overview.fantasy')}: <b>${ft}</b></span></div>
-      <div class="c-go">${t('overview.open')} ←</div></a>`;
+      <div class="c-go">${t('overview.open')} →</div></a>`;
   }
   $('#view').innerHTML=`
     <div class="eyebrow"><span class="dot"></span>${t('app.title')}</div>
