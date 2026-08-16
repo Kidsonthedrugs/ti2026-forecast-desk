@@ -618,6 +618,71 @@
    "source": "opendota (backfill 2026-08-15)",
    "verified": true,
    "completed_at": null
+  },
+  {
+   "match_id": "TI2026-ELIM-01",
+   "team_a": "Team Falcons",
+   "team_b": "Vici Gaming",
+   "winner": "Team Falcons",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "date": "2026-08-16",
+   "round": "ELIM"
+  },
+  {
+   "match_id": "TI2026-ELIM-02",
+   "team_a": "Aurora Gaming",
+   "team_b": "BetBoom Team",
+   "winner": "BetBoom Team",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "date": "2026-08-16",
+   "round": "ELIM"
+  },
+  {
+   "match_id": "TI2026-ELIM-03",
+   "team_a": "Team Spirit",
+   "team_b": "Team Resilience",
+   "winner": "Team Spirit",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "date": "2026-08-16",
+   "round": "ELIM"
+  },
+  {
+   "match_id": "TI2026-ELIM-04",
+   "team_a": "1w Team (ex-Tundra)",
+   "team_b": "GamerLegion",
+   "winner": "1w Team (ex-Tundra)",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   },
+   "date": "2026-08-16",
+   "round": "ELIM"
+  },
+  {
+   "match_id": "TI2026-ELIM-05",
+   "team_a": "LGD Gaming",
+   "team_b": "Team Yandex",
+   "winner": "Team Yandex",
+   "status": "completed",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   },
+   "date": "2026-08-16",
+   "round": "ELIM"
   }
  ]
 }

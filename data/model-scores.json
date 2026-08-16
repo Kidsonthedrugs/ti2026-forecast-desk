@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "calculated_at": "2026-08-15",
+ "calculated_at": "2026-08-16",
  "per_match": {
   "gemini": [
    {
@@ -431,6 +431,61 @@
     "predicted_winner": "Team Spirit",
     "hit": 0,
     "brier": 0.4096
+   },
+   {
+    "match_id": "TI2026-ELIM-01",
+    "round": "ELIM",
+    "team_a": "Team Falcons",
+    "team_b": "Vici Gaming",
+    "winner": "Team Falcons",
+    "p_team_a_win": 0.79,
+    "predicted_winner": "Team Falcons",
+    "hit": 1,
+    "brier": 0.0441
+   },
+   {
+    "match_id": "TI2026-ELIM-02",
+    "round": "ELIM",
+    "team_a": "Aurora Gaming",
+    "team_b": "BetBoom Team",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.61,
+    "predicted_winner": "Aurora Gaming",
+    "hit": 0,
+    "brier": 0.3721
+   },
+   {
+    "match_id": "TI2026-ELIM-03",
+    "round": "ELIM",
+    "team_a": "Team Spirit",
+    "team_b": "Team Resilience",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.83,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.0289
+   },
+   {
+    "match_id": "TI2026-ELIM-04",
+    "round": "ELIM",
+    "team_a": "1w Team (ex-Tundra)",
+    "team_b": "GamerLegion",
+    "winner": "1w Team (ex-Tundra)",
+    "p_team_a_win": 0.77,
+    "predicted_winner": "1w Team (ex-Tundra)",
+    "hit": 1,
+    "brier": 0.0529
+   },
+   {
+    "match_id": "TI2026-ELIM-05",
+    "round": "ELIM",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Yandex",
+    "winner": "Team Yandex",
+    "p_team_a_win": 0.68,
+    "predicted_winner": "LGD Gaming",
+    "hit": 0,
+    "brier": 0.4624
    }
   ],
   "chatgpt": [
@@ -862,6 +917,61 @@
     "predicted_winner": "Nigma Galaxy",
     "hit": 1,
     "brier": 0.2304
+   },
+   {
+    "match_id": "TI2026-ELIM-01",
+    "round": "ELIM",
+    "team_a": "Team Falcons",
+    "team_b": "Vici Gaming",
+    "winner": "Team Falcons",
+    "p_team_a_win": 0.68,
+    "predicted_winner": "Team Falcons",
+    "hit": 1,
+    "brier": 0.1024
+   },
+   {
+    "match_id": "TI2026-ELIM-02",
+    "round": "ELIM",
+    "team_a": "Aurora Gaming",
+    "team_b": "BetBoom Team",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.56,
+    "predicted_winner": "Aurora Gaming",
+    "hit": 0,
+    "brier": 0.3136
+   },
+   {
+    "match_id": "TI2026-ELIM-03",
+    "round": "ELIM",
+    "team_a": "Team Spirit",
+    "team_b": "Team Resilience",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.76,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.0576
+   },
+   {
+    "match_id": "TI2026-ELIM-04",
+    "round": "ELIM",
+    "team_a": "1w Team (ex-Tundra)",
+    "team_b": "GamerLegion",
+    "winner": "1w Team (ex-Tundra)",
+    "p_team_a_win": 0.74,
+    "predicted_winner": "1w Team (ex-Tundra)",
+    "hit": 1,
+    "brier": 0.0676
+   },
+   {
+    "match_id": "TI2026-ELIM-05",
+    "round": "ELIM",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Yandex",
+    "winner": "Team Yandex",
+    "p_team_a_win": 0.62,
+    "predicted_winner": "LGD Gaming",
+    "hit": 0,
+    "brier": 0.3844
    }
   ],
   "hermes": [
@@ -1293,6 +1403,61 @@
     "predicted_winner": "Team Spirit",
     "hit": 0,
     "brier": 0.36
+   },
+   {
+    "match_id": "TI2026-ELIM-01",
+    "round": "ELIM",
+    "team_a": "Team Falcons",
+    "team_b": "Vici Gaming",
+    "winner": "Team Falcons",
+    "p_team_a_win": 0.71,
+    "predicted_winner": "Team Falcons",
+    "hit": 1,
+    "brier": 0.0841
+   },
+   {
+    "match_id": "TI2026-ELIM-02",
+    "round": "ELIM",
+    "team_a": "Aurora Gaming",
+    "team_b": "BetBoom Team",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.58,
+    "predicted_winner": "Aurora Gaming",
+    "hit": 0,
+    "brier": 0.3364
+   },
+   {
+    "match_id": "TI2026-ELIM-03",
+    "round": "ELIM",
+    "team_a": "Team Spirit",
+    "team_b": "Team Resilience",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.62,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.1444
+   },
+   {
+    "match_id": "TI2026-ELIM-04",
+    "round": "ELIM",
+    "team_a": "1w Team (ex-Tundra)",
+    "team_b": "GamerLegion",
+    "winner": "1w Team (ex-Tundra)",
+    "p_team_a_win": 0.77,
+    "predicted_winner": "1w Team (ex-Tundra)",
+    "hit": 1,
+    "brier": 0.0529
+   },
+   {
+    "match_id": "TI2026-ELIM-05",
+    "round": "ELIM",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Yandex",
+    "winner": "Team Yandex",
+    "p_team_a_win": 0.59,
+    "predicted_winner": "LGD Gaming",
+    "hit": 0,
+    "brier": 0.3481
    }
   ],
   "claude": [
@@ -1724,41 +1889,101 @@
     "predicted_winner": "Team Spirit",
     "hit": 0,
     "brier": 0.3364
+   },
+   {
+    "match_id": "TI2026-ELIM-01",
+    "round": "ELIM",
+    "team_a": "Team Falcons",
+    "team_b": "Vici Gaming",
+    "winner": "Team Falcons",
+    "p_team_a_win": 0.57,
+    "predicted_winner": "Team Falcons",
+    "hit": 1,
+    "brier": 0.1849
+   },
+   {
+    "match_id": "TI2026-ELIM-02",
+    "round": "ELIM",
+    "team_a": "Aurora Gaming",
+    "team_b": "BetBoom Team",
+    "winner": "BetBoom Team",
+    "p_team_a_win": 0.48,
+    "predicted_winner": "BetBoom Team",
+    "hit": 1,
+    "brier": 0.2304
+   },
+   {
+    "match_id": "TI2026-ELIM-03",
+    "round": "ELIM",
+    "team_a": "Team Spirit",
+    "team_b": "Team Resilience",
+    "winner": "Team Spirit",
+    "p_team_a_win": 0.63,
+    "predicted_winner": "Team Spirit",
+    "hit": 1,
+    "brier": 0.1369
+   },
+   {
+    "match_id": "TI2026-ELIM-04",
+    "round": "ELIM",
+    "team_a": "1w Team (ex-Tundra)",
+    "team_b": "GamerLegion",
+    "winner": "1w Team (ex-Tundra)",
+    "p_team_a_win": 0.66,
+    "predicted_winner": "1w Team (ex-Tundra)",
+    "hit": 1,
+    "brier": 0.1156
+   },
+   {
+    "match_id": "TI2026-ELIM-05",
+    "round": "ELIM",
+    "team_a": "LGD Gaming",
+    "team_b": "Team Yandex",
+    "winner": "Team Yandex",
+    "p_team_a_win": 0.42,
+    "predicted_winner": "Team Yandex",
+    "hit": 1,
+    "brier": 0.1764
    }
   ]
  },
  "models": {
   "gemini": {
-   "predictions_submitted": 39,
-   "matches_scored": 39,
+   "predictions_submitted": 44,
+   "matches_scored": 44,
    "coverage_percent": 100.0,
-   "winner_accuracy_percent": 69.23,
-   "brier_score": 0.2049
+   "winner_accuracy_percent": 68.18,
+   "brier_score": 0.2034
   },
   "chatgpt": {
-   "predictions_submitted": 39,
-   "matches_scored": 39,
+   "predictions_submitted": 44,
+   "matches_scored": 44,
    "coverage_percent": 100.0,
-   "winner_accuracy_percent": 66.67,
-   "brier_score": 0.2269
+   "winner_accuracy_percent": 65.91,
+   "brier_score": 0.2222
   },
   "hermes": {
-   "predictions_submitted": 39,
-   "matches_scored": 39,
+   "predictions_submitted": 44,
+   "matches_scored": 44,
    "coverage_percent": 100.0,
-   "winner_accuracy_percent": 74.36,
-   "brier_score": 0.1903
+   "winner_accuracy_percent": 72.73,
+   "brier_score": 0.1906
   },
   "claude": {
-   "predictions_submitted": 39,
-   "matches_scored": 39,
+   "predictions_submitted": 44,
+   "matches_scored": 44,
    "coverage_percent": 100.0,
-   "winner_accuracy_percent": 74.36,
-   "brier_score": 0.1901
+   "winner_accuracy_percent": 77.27,
+   "brier_score": 0.1877
   }
  },
  "daily": {
   "gemini": {
+   "ELIM": {
+    "n": 5,
+    "winner_accuracy_percent": 60.0,
+    "brier_score": 0.1921
+   },
    "R1": {
     "n": 8,
     "winner_accuracy_percent": 100.0,
@@ -1786,6 +2011,11 @@
    }
   },
   "chatgpt": {
+   "ELIM": {
+    "n": 5,
+    "winner_accuracy_percent": 60.0,
+    "brier_score": 0.1851
+   },
    "R1": {
     "n": 8,
     "winner_accuracy_percent": 87.5,
@@ -1813,6 +2043,11 @@
    }
   },
   "hermes": {
+   "ELIM": {
+    "n": 5,
+    "winner_accuracy_percent": 60.0,
+    "brier_score": 0.1932
+   },
    "R1": {
     "n": 8,
     "winner_accuracy_percent": 100.0,
@@ -1840,6 +2075,11 @@
    }
   },
   "claude": {
+   "ELIM": {
+    "n": 5,
+    "winner_accuracy_percent": 100.0,
+    "brier_score": 0.1688
+   },
    "R1": {
     "n": 8,
     "winner_accuracy_percent": 100.0,
@@ -1870,130 +2110,154 @@
  "cumulative": {
   "gemini": [
    {
+    "round": "ELIM",
+    "n": 5,
+    "winner_accuracy_percent": 60.0,
+    "brier_score": 0.1921
+   },
+   {
     "round": "R1",
-    "n": 8,
-    "winner_accuracy_percent": 100.0,
-    "brier_score": 0.082
+    "n": 13,
+    "winner_accuracy_percent": 84.62,
+    "brier_score": 0.1244
    },
    {
     "round": "R2",
-    "n": 16,
-    "winner_accuracy_percent": 81.25,
-    "brier_score": 0.1601
+    "n": 21,
+    "winner_accuracy_percent": 76.19,
+    "brier_score": 0.1677
    },
    {
     "round": "R3",
-    "n": 24,
-    "winner_accuracy_percent": 70.83,
-    "brier_score": 0.1898
+    "n": 29,
+    "winner_accuracy_percent": 68.97,
+    "brier_score": 0.1902
    },
    {
     "round": "R4",
-    "n": 32,
-    "winner_accuracy_percent": 68.75,
-    "brier_score": 0.198
+    "n": 37,
+    "winner_accuracy_percent": 67.57,
+    "brier_score": 0.1972
    },
    {
     "round": "R5",
-    "n": 39,
-    "winner_accuracy_percent": 69.23,
-    "brier_score": 0.2049
+    "n": 44,
+    "winner_accuracy_percent": 68.18,
+    "brier_score": 0.2034
    }
   ],
   "chatgpt": [
    {
+    "round": "ELIM",
+    "n": 5,
+    "winner_accuracy_percent": 60.0,
+    "brier_score": 0.1851
+   },
+   {
     "round": "R1",
-    "n": 8,
-    "winner_accuracy_percent": 87.5,
-    "brier_score": 0.1752
+    "n": 13,
+    "winner_accuracy_percent": 76.92,
+    "brier_score": 0.179
    },
    {
     "round": "R2",
-    "n": 16,
-    "winner_accuracy_percent": 75.0,
-    "brier_score": 0.2034
+    "n": 21,
+    "winner_accuracy_percent": 71.43,
+    "brier_score": 0.1991
    },
    {
     "round": "R3",
-    "n": 24,
-    "winner_accuracy_percent": 79.17,
-    "brier_score": 0.2144
+    "n": 29,
+    "winner_accuracy_percent": 75.86,
+    "brier_score": 0.2093
    },
    {
     "round": "R4",
-    "n": 32,
-    "winner_accuracy_percent": 75.0,
-    "brier_score": 0.2129
+    "n": 37,
+    "winner_accuracy_percent": 72.97,
+    "brier_score": 0.2091
    },
    {
     "round": "R5",
-    "n": 39,
-    "winner_accuracy_percent": 66.67,
-    "brier_score": 0.2269
+    "n": 44,
+    "winner_accuracy_percent": 65.91,
+    "brier_score": 0.2222
    }
   ],
   "hermes": [
    {
+    "round": "ELIM",
+    "n": 5,
+    "winner_accuracy_percent": 60.0,
+    "brier_score": 0.1932
+   },
+   {
     "round": "R1",
-    "n": 8,
-    "winner_accuracy_percent": 100.0,
-    "brier_score": 0.0958
+    "n": 13,
+    "winner_accuracy_percent": 84.62,
+    "brier_score": 0.1333
    },
    {
     "round": "R2",
-    "n": 16,
-    "winner_accuracy_percent": 87.5,
-    "brier_score": 0.1414
+    "n": 21,
+    "winner_accuracy_percent": 80.95,
+    "brier_score": 0.1537
    },
    {
     "round": "R3",
-    "n": 24,
-    "winner_accuracy_percent": 79.17,
-    "brier_score": 0.1663
+    "n": 29,
+    "winner_accuracy_percent": 75.86,
+    "brier_score": 0.1709
    },
    {
     "round": "R4",
-    "n": 32,
-    "winner_accuracy_percent": 78.12,
-    "brier_score": 0.1779
+    "n": 37,
+    "winner_accuracy_percent": 75.68,
+    "brier_score": 0.18
    },
    {
     "round": "R5",
-    "n": 39,
-    "winner_accuracy_percent": 74.36,
-    "brier_score": 0.1903
+    "n": 44,
+    "winner_accuracy_percent": 72.73,
+    "brier_score": 0.1906
    }
   ],
   "claude": [
    {
-    "round": "R1",
-    "n": 8,
+    "round": "ELIM",
+    "n": 5,
     "winner_accuracy_percent": 100.0,
-    "brier_score": 0.0664
+    "brier_score": 0.1688
+   },
+   {
+    "round": "R1",
+    "n": 13,
+    "winner_accuracy_percent": 100.0,
+    "brier_score": 0.1058
    },
    {
     "round": "R2",
-    "n": 16,
-    "winner_accuracy_percent": 81.25,
-    "brier_score": 0.1447
+    "n": 21,
+    "winner_accuracy_percent": 85.71,
+    "brier_score": 0.1505
    },
    {
     "round": "R3",
-    "n": 24,
-    "winner_accuracy_percent": 75.0,
-    "brier_score": 0.1733
+    "n": 29,
+    "winner_accuracy_percent": 79.31,
+    "brier_score": 0.1726
    },
    {
     "round": "R4",
-    "n": 32,
-    "winner_accuracy_percent": 75.0,
-    "brier_score": 0.1762
+    "n": 37,
+    "winner_accuracy_percent": 78.38,
+    "brier_score": 0.1752
    },
    {
     "round": "R5",
-    "n": 39,
-    "winner_accuracy_percent": 74.36,
-    "brier_score": 0.1901
+    "n": 44,
+    "winner_accuracy_percent": 77.27,
+    "brier_score": 0.1877
    }
   ]
  }

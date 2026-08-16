@@ -768,7 +768,12 @@
    "best_of": 3,
    "team_a_name": "Team Falcons",
    "team_b_name": "Vici Gaming",
-   "status": "scheduled"
+   "status": "completed",
+   "winner": "Team Falcons",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   },
   {
    "match_id": "TI2026-ELIM-02",
@@ -779,7 +784,12 @@
    "best_of": 3,
    "team_a_name": "Aurora Gaming",
    "team_b_name": "BetBoom Team",
-   "status": "scheduled"
+   "status": "completed",
+   "winner": "BetBoom Team",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   },
   {
    "match_id": "TI2026-ELIM-03",
@@ -790,7 +800,12 @@
    "best_of": 3,
    "team_a_name": "Team Spirit",
    "team_b_name": "Team Resilience",
-   "status": "scheduled"
+   "status": "completed",
+   "winner": "Team Spirit",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   },
   {
    "match_id": "TI2026-ELIM-04",
@@ -801,7 +816,12 @@
    "best_of": 3,
    "team_a_name": "1w Team (ex-Tundra)",
    "team_b_name": "GamerLegion",
-   "status": "scheduled"
+   "status": "completed",
+   "winner": "1w Team (ex-Tundra)",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 0
+   }
   },
   {
    "match_id": "TI2026-ELIM-05",
@@ -812,7 +832,12 @@
    "best_of": 3,
    "team_a_name": "LGD Gaming",
    "team_b_name": "Team Yandex",
-   "status": "scheduled"
+   "status": "completed",
+   "winner": "Team Yandex",
+   "score": {
+    "winner_maps": 2,
+    "loser_maps": 1
+   }
   }
  ]
 }
