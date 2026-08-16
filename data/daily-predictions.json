@@ -1658,6 +1658,169 @@
      }
     }
    }
+  },
+  {
+   "matchday_id": "day-07",
+   "date": "2026-08-13",
+   "round": "UBQF",
+   "data_version": "v1.0.0",
+   "submitted_at": "2026-08-16T19:44:09",
+   "matches": [
+    {
+     "match_id": "TI2026-P01",
+     "team_a": "1w Team (ex-Tundra)",
+     "team_b": "Team Spirit",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-P02",
+     "team_a": "PARIVISION",
+     "team_b": "BetBoom Team",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-P03",
+     "team_a": "Team Liquid",
+     "team_b": "Team Yandex",
+     "best_of": 2
+    },
+    {
+     "match_id": "TI2026-P04",
+     "team_a": "Nigma Galaxy",
+     "team_b": "Team Falcons",
+     "best_of": 2
+    }
+   ],
+   "models": {
+    "gemini": {
+     "predictions": {
+      "TI2026-P01": {
+       "p_team_a_win": 0.54,
+       "p_team_b_win": 0.46,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 62,
+       "reasoning": "1w Team exhibits stronger Swiss stage consistency and draft execution compared to Team Spirit's recent mid-game vulnerabilities."
+      },
+      "TI2026-P02": {
+       "p_team_a_win": 0.67,
+       "p_team_b_win": 0.33,
+       "predicted_winner": "PARIVISION",
+       "confidence": 74,
+       "reasoning": "PARIVISION holds an undefeated 4-0 Swiss record with superior base rating, laning efficiency, and a direct 2-0 sweep over BetBoom."
+      },
+      "TI2026-P03": {
+       "p_team_a_win": 0.64,
+       "p_team_b_win": 0.36,
+       "predicted_winner": "Team Liquid",
+       "confidence": 70,
+       "reasoning": "Team Liquid outmatches Team Yandex in player composite ratings, macro pace, and holds an earlier Swiss head-to-head series victory."
+      },
+      "TI2026-P04": {
+       "p_team_a_win": 0.48,
+       "p_team_b_win": 0.52,
+       "predicted_winner": "Team Falcons",
+       "confidence": 58,
+       "reasoning": "Team Falcons' season-long base rating and hero meta flexibility provide a narrow edge over Nigma Galaxy's surging Swiss momentum."
+      }
+     }
+    },
+    "hermes": {
+     "predictions": {
+      "TI2026-P01": {
+       "p_team_a_win": 0.48,
+       "p_team_b_win": 0.52,
+       "predicted_winner": "Team Spirit",
+       "confidence": 50,
+       "reasoning": "Base and player ratings are near parity while Spirit holds a slight H2H edge and broader playoff pedigree, but 1w's stronger late Swiss form keeps the series close."
+      },
+      "TI2026-P02": {
+       "p_team_a_win": 0.62,
+       "p_team_b_win": 0.38,
+       "predicted_winner": "PARIVISION",
+       "confidence": 68,
+       "reasoning": "PARIVISION's 4-0 Swiss run, Round 3 2-0 H2H sweep, superior recent form and comparable player composite give them a clear series edge."
+      },
+      "TI2026-P03": {
+       "p_team_a_win": 0.58,
+       "p_team_b_win": 0.42,
+       "predicted_winner": "Team Liquid",
+       "confidence": 60,
+       "reasoning": "Team Liquid's higher base rating, Round 2 2-1 H2H win and stronger recent tournament form outweigh Team Yandex's elimination-round momentum."
+      },
+      "TI2026-P04": {
+       "p_team_a_win": 0.39,
+       "p_team_b_win": 0.61,
+       "predicted_winner": "Team Falcons",
+       "confidence": 64,
+       "reasoning": "Team Falcons lead Nigma on the player composite, base rating and a clean H2H record at ESL and 1win, despite Nigma's strong 4-1 Swiss finish."
+      }
+     }
+    },
+    "chatgpt": {
+     "predictions": {
+      "TI2026-P01": {
+       "p_team_a_win": 0.54,
+       "p_team_b_win": 0.46,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 55,
+       "reasoning": "Recent form favors 1w after wins over Falcons, Yandex, and GamerLegion, while Spirit enters after losses to PARIVISION and Nigma Galaxy."
+      },
+      "TI2026-P02": {
+       "p_team_a_win": 0.63,
+       "p_team_b_win": 0.37,
+       "predicted_winner": "PARIVISION",
+       "confidence": 70,
+       "reasoning": "PARIVISION's unbeaten Swiss run, direct 2-0 win over BetBoom, stronger recent form, and favorable player composite make it the clear favorite."
+      },
+      "TI2026-P03": {
+       "p_team_a_win": 0.64,
+       "p_team_b_win": 0.36,
+       "predicted_winner": "Team Liquid",
+       "confidence": 68,
+       "reasoning": "Liquid combines a 4-1 Swiss record, a direct 2-1 win over Yandex, and stronger recent form following its 1win Essence II title."
+      },
+      "TI2026-P04": {
+       "p_team_a_win": 0.54,
+       "p_team_b_win": 0.46,
+       "predicted_winner": "Nigma Galaxy",
+       "confidence": 54,
+       "reasoning": "Nigma's four consecutive 2-0 wins create a recent-form edge, but Falcons' stronger season baseline and player composite keep the series close."
+      }
+     }
+    },
+    "claude": {
+     "predictions": {
+      "TI2026-P01": {
+       "p_team_a_win": 0.58,
+       "p_team_b_win": 0.42,
+       "predicted_winner": "1w Team (ex-Tundra)",
+       "confidence": 56,
+       "reasoning": "Base ratings are near parity but form diverges sharply: 1w won their R3 H2H-adjacent path and beat GamerLegion 2-0 while Spirit lost Rounds 4-5 (0-2 PARIVISION, 0-2 Nigma) with Yatoro/Larl map win rate collapsing, giving S_form and S_player a modest edge to Pure/bzm/33 on 7.41 Kez-Earth Spirit-Doom cores."
+      },
+      "TI2026-P02": {
+       "p_team_a_win": 0.71,
+       "p_team_b_win": 0.29,
+       "predicted_winner": "PARIVISION",
+       "confidence": 74,
+       "reasoning": "PARIVISION are 4-0 in the Swiss with a decay-weighted 2-0 H2H over BetBoom in Round 3 plus the strongest S_base and S_player (Satanic/No[o]ne- top position-relative ratings 5.28/4.95, Noticed-anchored Centaur-Earth Spirit meta pool), while BetBoom lost three of their last five series including the R5 Falcons defeat."
+      },
+      "TI2026-P03": {
+       "p_team_a_win": 0.66,
+       "p_team_b_win": 0.34,
+       "predicted_winner": "Team Liquid",
+       "confidence": 68,
+       "reasoning": "Liquid hold the recent H2H (2-1 in Round 2), a 4-1 Swiss record, the 1win Essence II title and superior S_player through Nisha/m1CKe/Ace, whereas Yandex needed three maps against Team Resilience and LGD and show weaker weighted map win rate and lower DM/Saksa laning output on 7.41."
+      },
+      "TI2026-P04": {
+       "p_team_a_win": 0.47,
+       "p_team_b_win": 0.53,
+       "predicted_winner": "Team Falcons",
+       "confidence": 52,
+       "reasoning": "Falcons retain the higher S_base from a deeper decay-weighted sample (EWC and 1win finals, ATF rating 5.46) but Nigma's 4-1 run with lorenof/SumaiL Ember-Nature's Prophet cores and 2-0 wins over LGD, Vici and Spirit lifts S_form and S_draft almost to parity, leaving a near-coinflip that coverage shrinkage pulls toward 0.50."
+      }
+     }
+    }
+   }
   }
  ]
 }
