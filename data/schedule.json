@@ -838,6 +838,54 @@
     "winner_maps": 2,
     "loser_maps": 1
    }
+  },
+  {
+   "match_id": "TI2026-P01",
+   "day": 7,
+   "round": "UBQF",
+   "pool": "Playoffs",
+   "matchday_order": 1,
+   "best_of": 3,
+   "team_a_name": "1w Team (ex-Tundra)",
+   "team_b_name": "Team Spirit",
+   "status": "scheduled",
+   "date": "2026-08-20"
+  },
+  {
+   "match_id": "TI2026-P02",
+   "day": 7,
+   "round": "UBQF",
+   "pool": "Playoffs",
+   "matchday_order": 2,
+   "best_of": 3,
+   "team_a_name": "PARIVISION",
+   "team_b_name": "BetBoom Team",
+   "status": "scheduled",
+   "date": "2026-08-20"
+  },
+  {
+   "match_id": "TI2026-P03",
+   "day": 7,
+   "round": "UBQF",
+   "pool": "Playoffs",
+   "matchday_order": 3,
+   "best_of": 3,
+   "team_a_name": "Team Liquid",
+   "team_b_name": "Team Yandex",
+   "status": "scheduled",
+   "date": "2026-08-20"
+  },
+  {
+   "match_id": "TI2026-P04",
+   "day": 7,
+   "round": "UBQF",
+   "pool": "Playoffs",
+   "matchday_order": 4,
+   "best_of": 3,
+   "team_a_name": "Nigma Galaxy",
+   "team_b_name": "Team Falcons",
+   "status": "scheduled",
+   "date": "2026-08-20"
   }
  ]
 }
